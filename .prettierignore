@@ -9,3 +9,4 @@ public/
 package-lock.json
 package.json
 next.config.mjs
+tailwind.config.ts
