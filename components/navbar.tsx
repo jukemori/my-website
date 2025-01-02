@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { BookOpen, Home, Moon, Sun, User } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { usePathname } from 'next/navigation'
 
 const NAV_ITEMS = [
   { href: '/', label: 'Home', icon: Home },
@@ -22,7 +23,8 @@ function NavLink({ href, label, icon: Icon }: NavLinkProps) {
     <li>
       <Link
         href={href}
-        className="flex flex-col items-center text-sm font-medium transition-colors duration-300 hover:text-[var(--orange-color)] md:text-base"
+        className="text-muted data-[active=true]:text-primary data-[active=true]:border-primary hover:text-primary flex flex-col items-center text-sm font-medium transition-colors duration-300 data-[active=true]:border-b-2 data-[active=true]:font-bold md:text-base"
+        data-active={usePathname() === href}
       >
         <Icon className="h-4 w-4 md:hidden" /> {label}
       </Link>
@@ -62,7 +64,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="header fixed left-0 top-0 z-[100] w-full bg-background">
+    <header className="header fixed left-0 top-0 z-[100] w-full">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
         <Link
           href="/"
@@ -70,7 +72,7 @@ export function Navbar() {
         />
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t border-black/10 bg-background p-4 md:relative md:flex md:w-auto md:border-0 md:bg-transparent md:p-0">
+          <ul className="fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t border-black/10 p-4 md:relative md:flex md:w-auto md:border-0 md:bg-transparent md:p-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
