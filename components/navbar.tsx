@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BookOpen, Home, Moon, Sun, User } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 const NAV_ITEMS = [
   { href: '/', label: 'Home', icon: Home },
@@ -41,11 +42,10 @@ function ThemeToggle() {
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       aria-label="Toggle theme"
     >
-      {theme === 'light' ? (
-        <Moon className="h-5 w-5 md:h-4 md:w-4" />
-      ) : (
-        <Sun className="h-5 w-5 md:h-4 md:w-4" />
-      )}
+      <div className="relative">
+        <Sun className="h-5 w-5 rotate-0 scale-100 transition-all md:h-4 md:w-4 dark:-rotate-90 dark:scale-0" />
+        <Moon className="absolute left-0 top-0 h-5 w-5 rotate-90 scale-0 transition-all md:h-4 md:w-4 dark:rotate-0 dark:scale-100" />
+      </div>
     </button>
   )
 }
@@ -66,10 +66,22 @@ export function Navbar() {
   return (
     <header className="header fixed left-0 top-0 z-[100] w-full">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
-        <Link
-          href="/"
-          className="h-[30px] w-[30px] bg-black bg-cover bg-center bg-no-repeat"
-        />
+        <Link href="/" className="relative h-[30px] w-[30px]">
+          <Image
+            src="/images/logo-light.png"
+            width={30}
+            height={30}
+            alt="Logo"
+            className="h-full w-full object-contain dark:hidden"
+          />
+          <Image
+            src="/images/logo-dark.png"
+            width={30}
+            height={30}
+            alt="Logo"
+            className="hidden h-full w-full object-contain dark:block"
+          />
+        </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
           <ul className="fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t border-black/10 p-4 md:relative md:flex md:w-auto md:border-0 md:bg-transparent md:p-0">
