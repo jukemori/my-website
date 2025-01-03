@@ -3,9 +3,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 
 export default async function BlogPost({ params }: Props) {
   const posts = getBlogPosts()
-  const post = posts.find((post) => post.slug === (params?.slug || ''))
+  const slug = (await params).slug
+  const post = posts.find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
