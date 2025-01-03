@@ -1,6 +1,7 @@
 import { getBlogPosts } from '@/lib/blog'
 import Image from 'next/image'
 import Link from 'next/link'
+import { formatDate } from '@/lib/blog'
 
 export default function BlogPage() {
   const posts = getBlogPosts()
@@ -30,11 +31,7 @@ export default function BlogPage() {
               <div className="p-4">
                 <h3 className="mb-2 text-xl font-semibold">{post.title}</h3>
                 <time className="text-muted text-sm">
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric',
-                  })}
+                  {formatDate(post.date)}
                 </time>
               </div>
             </Link>

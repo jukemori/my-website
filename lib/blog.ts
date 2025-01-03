@@ -39,3 +39,11 @@ export function getBlogPosts(): BlogPost[] {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   )
 }
+
+export function formatDate(date: string | Date) {
+  return new Date(date).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  })
+}
