@@ -1,7 +1,9 @@
+import Image from 'next/image'
+
 export default function About() {
   return (
     <>
-      <h1 className="mb-6 text-3xl font-bold">About Me</h1>
+      <h1 className="mb-5 text-3xl font-bold">About Me</h1>
 
       <section className="mb-8">
         <h2 className="mb-4 text-xl font-semibold">Background</h2>
@@ -18,6 +20,13 @@ export default function About() {
           playing collegiate football, I explored various career paths but
           struggled to find a clear direction.
         </p>
+        <Image
+          width={590}
+          height={350}
+          src="/images/about/about-football.jpg"
+          alt="about image"
+          className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
+        />
         <p className="text-muted mb-4">
           In 2019, I unexpectedly developed a passion for learning Spanish.
           Despite struggling with the language in high school and college, I
@@ -32,6 +41,14 @@ export default function About() {
           completed an intensive web development bootcamp at Le Wagon, and began
           my journey as a frontend developer in Tokyo.
         </p>
+
+        <Image
+          width={590}
+          height={350}
+          src="/images/about/about-mexico.jpg"
+          alt="about image"
+          className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
+        />
       </section>
 
       <section className="mb-8">
@@ -62,6 +79,13 @@ export default function About() {
           continuously growing and tackling new challenges in an Agile
           environment.
         </p>
+        <Image
+          width={590}
+          height={350}
+          src="/images/about/about-boxing.jpg"
+          alt="about image"
+          className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
+        />
       </section>
 
       <section className="mb-8">
