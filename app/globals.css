@@ -78,11 +78,3 @@ body {
     box-shadow: var(--profile-glow);
   }
 }
-
-@supports (padding: env(safe-area-inset-bottom)) {
-  .safe-bottom {
-    @media (max-width: 767px) {
-      padding-bottom: calc(1rem + env(safe-area-inset-bottom));
-    }
-  }
-}
