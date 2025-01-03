@@ -63,7 +63,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="header bg-background/90 fixed left-0 top-0 z-[100] w-full backdrop-blur-sm">
+    <header className="header md:bg-background/90 fixed left-0 top-0 z-[100] w-full md:backdrop-blur-sm">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
         <Link href="/" className="relative h-[30px] w-[30px]">
           <svg
