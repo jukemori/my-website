@@ -2,6 +2,12 @@ import { getBlogPosts } from '@/lib/blog'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 
+type Props = {
+  params: {
+    slug: string
+  }
+}
+
 export async function generateStaticParams() {
   const posts = getBlogPosts()
   return posts.map((post) => ({
@@ -9,11 +15,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export default async function BlogPost({ params }: Props) {
   const posts = getBlogPosts()
   const post = posts.find((post) => post.slug === (params?.slug || ''))
 
