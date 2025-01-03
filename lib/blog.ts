@@ -6,6 +6,7 @@ export interface BlogPost {
   slug: string
   title: string
   date: string
+  image: string
   content: string
 }
 
@@ -18,16 +19,17 @@ export function getBlogPosts(): BlogPost[] {
     const files = fs.readdirSync(yearPath)
 
     return files.map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, '')
       const fullPath = path.join(yearPath, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
-
       const { data, content } = matter(fileContents)
+
+      const slug = data.slug || fileName.replace(/\.mdx$/, '')
 
       return {
         slug,
         title: data.title,
         date: data.date,
+        image: data.image,
         content,
       }
     })
