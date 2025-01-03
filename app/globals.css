@@ -81,7 +81,9 @@ body {
 
 @supports (padding: env(safe-area-inset-bottom)) {
   .safe-bottom {
-    padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
-    min-height: calc(4rem + env(safe-area-inset-bottom));
+    @media (max-width: 767px) {
+      padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+      bottom: env(safe-area-inset-bottom);
+    }
   }
 }
