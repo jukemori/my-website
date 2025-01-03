@@ -23,7 +23,7 @@ function NavLink({ href, label, icon: Icon }: NavLinkProps) {
     <li>
       <Link
         href={href}
-        className="text-muted data-[active=true]:text-primary data-[active=true]:border-primary hover:text-primary flex flex-col items-center text-sm font-medium transition-colors duration-300 data-[active=true]:border-b-2 data-[active=true]:font-bold md:text-base"
+        className="text-muted data-[active=true]:text-primary data-[active=true]:border-primary hover:text-primary flex flex-col items-center text-sm font-medium transition-colors duration-300 data-[active=true]:font-bold md:text-base md:data-[active=true]:border-b-2"
         data-active={usePathname() === href}
       >
         <Icon className="h-4 w-4 md:hidden" /> {label}
