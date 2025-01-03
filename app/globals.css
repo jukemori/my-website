@@ -79,8 +79,8 @@ body {
   }
 }
 
-@supports (-webkit-touch-callout: none) {
+@supports (padding: env(safe-area-inset-bottom)) {
   .safe-bottom {
-    padding-bottom: calc(env(safe-area-inset-bottom) + 1rem) !important;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
   }
 }
