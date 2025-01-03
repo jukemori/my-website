@@ -63,7 +63,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="header fixed left-0 top-0 z-[100] w-full bg-background">
+    <header className="header bg-background/90 fixed left-0 top-0 z-[100] w-full backdrop-blur-sm">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
         <Link href="/" className="relative h-[30px] w-[30px]">
           <svg
@@ -98,7 +98,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="border-border safe-bottom fixed left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
+          <ul className="border-border safe-bottom bg-background/90 fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t pb-3 pt-3 backdrop-blur-sm md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
