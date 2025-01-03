@@ -1,15 +1,27 @@
-export default function Blog() {
+import { getBlogPosts } from '@/lib/blog'
+import Link from 'next/link'
+
+export default function BlogPage() {
+  const posts = getBlogPosts()
+
   return (
-    <>
-      <h1 className="mb-6 text-4xl font-bold">Blog</h1>
-      <div className="space-y-8">
-        {/* Example blog post */}
-        <article className="border-b pb-8">
-          <h2 className="mb-2 text-2xl font-bold">My First Blog Post</h2>
-          <p className="mb-4 text-gray-600">Posted on [date]</p>
-          <p>This is where your blog post content will go.</p>
-        </article>
-      </div>
-    </>
+    <div className="mx-auto max-w-2xl py-16">
+      <h1 className="mb-8 text-3xl font-bold">Blog Posts</h1>
+      <ul className="space-y-4">
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link
+              href={`/blog/${post.slug}`}
+              className="block transition-opacity hover:opacity-70"
+            >
+              <h2 className="text-xl font-semibold">{post.title}</h2>
+              <time className="text-muted-text-sm">
+                {new Date(post.date).toLocaleDateString()}
+              </time>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
