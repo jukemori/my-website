@@ -75,7 +75,8 @@ export function Navbar() {
       bgExtension.style.width = '100%'
       bgExtension.style.zIndex = '99'
       bgExtension.style.height = '100vh'
-      bgExtension.style.backgroundColor = 'hsl(var(--background))'
+      bgExtension.style.backgroundColor = 'hsl(var(--background)/90)'
+      bgExtension.style.backdropFilter = 'blur(4px)'
       bgExtension.style.transform = 'translateY(100%)'
       document.body.appendChild(bgExtension)
     }
