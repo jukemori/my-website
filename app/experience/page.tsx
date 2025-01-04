@@ -26,7 +26,7 @@ export default function Experience() {
       <section className="grid gap-8 md:grid-cols-2">
         <div>
           <h2 className="mb-4 text-2xl font-semibold">Top Skills</h2>
-          <ul className="ml-6 list-disc">
+          <ul className="text-muted ml-6 list-disc">
             {skillsData.topSkills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
@@ -35,7 +35,7 @@ export default function Experience() {
 
         <div>
           <h2 className="mb-4 text-2xl font-semibold">Languages</h2>
-          <ul className="ml-6 list-disc">
+          <ul className="text-muted ml-6 list-disc">
             {skillsData.languages.map(({ language, level }) => (
               <li key={language}>
                 {language} ({level})
