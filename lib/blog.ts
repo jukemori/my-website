@@ -8,6 +8,7 @@ export interface BlogPost {
   date: string
   image: string
   content: string
+  tags?: string[]
 }
 
 export function getBlogPosts(): BlogPost[] {
@@ -31,6 +32,7 @@ export function getBlogPosts(): BlogPost[] {
         date: data.date,
         image: data.image,
         content,
+        tags: data.tags || [],
       }
     })
   })

@@ -23,7 +23,7 @@ export default function BlogPage() {
                 <Image
                   src={post.image}
                   alt={post.title}
-                  className="mb-4 h-48 rounded-t-lg object-cover md:h-60"
+                  className="h-48 rounded-t-lg object-cover md:h-60"
                   width={700}
                   height={700}
                   loading="lazy"
@@ -32,6 +32,15 @@ export default function BlogPage() {
                 />
               )}
               <div className="p-4">
+                {post.tags && post.tags.length > 0 && (
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <span key={tag} className="text-muted text-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <h3 className="mb-2 text-xl font-semibold">{post.title}</h3>
                 <time className="text-muted text-sm">
                   {formatDate(post.date)}
