@@ -36,7 +36,7 @@ export default async function BlogPost({ params }: Props) {
       <Image
         src={post.image}
         alt={post.title}
-        className="mb-8 h-96 w-full rounded-lg object-cover"
+        className="mb-8 h-auto w-full object-cover md:h-96"
         width={700}
         height={700}
       />
