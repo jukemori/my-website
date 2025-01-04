@@ -1,0 +1,17 @@
+{
+  "topSkills": ["React.js", "TypeScript", "Ruby on Rails"],
+  "languages": [
+    {
+      "language": "Japanese",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "Bilingual"
+    },
+    {
+      "language": "Spanish",
+      "level": "Full Professional"
+    }
+  ]
+}
