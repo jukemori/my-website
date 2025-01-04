@@ -1,10 +1,10 @@
 import { getBlogPosts } from '@/lib/blog'
-import Image from 'next/image'
+import { ImageWithSkeleton } from '@/components/image-with-skeleton'
 import Link from 'next/link'
 import { formatDate } from '@/lib/blog'
 
-export default function BlogPage() {
-  const posts = getBlogPosts()
+export default async function BlogPage() {
+  const posts = await getBlogPosts()
 
   return (
     <div className="pb-24 md:pb-10">
@@ -20,15 +20,12 @@ export default function BlogPage() {
               className="group block transition-opacity hover:opacity-90"
             >
               {post.image && (
-                <Image
+                <ImageWithSkeleton
                   src={post.image}
                   alt={post.title}
                   className="h-48 rounded-t-lg object-cover md:h-60"
                   width={700}
                   height={700}
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL={post.image}
                 />
               )}
               <div className="p-4">
