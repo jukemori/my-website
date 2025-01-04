@@ -26,7 +26,7 @@ export function EducationCard({
       {activities && <p className="text-muted leading-relaxed">{activities}</p>}
 
       {technologies && (
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="text-muted mt-4 flex flex-wrap gap-2">
           {technologies.map((tech) => (
             <i key={tech} className={`devicon-${tech}-plain`}></i>
           ))}
