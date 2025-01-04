@@ -39,6 +39,7 @@ export default async function BlogPost({ params }: Props) {
         className="mb-8 h-auto w-full object-cover md:h-96"
         width={700}
         height={700}
+        priority
         loading="eager"
         placeholder="blur"
         blurDataURL={post.image}

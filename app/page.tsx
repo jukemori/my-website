@@ -10,6 +10,7 @@ export default function Home() {
           src="/images/profile.webp"
           alt="Profile Picture"
           className="profile-glow mb-8 h-60 w-60 rounded-full object-cover md:h-72 md:w-72"
+          priority
           loading="eager"
           placeholder="blur"
           blurDataURL="/images/profile.webp"
