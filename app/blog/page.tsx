@@ -40,7 +40,7 @@ export default async function BlogPage() {
                 )}
                 <h3 className="mb-2 text-xl font-semibold">{post.title}</h3>
                 <time className="text-muted text-sm">
-                  {formatDate(post.date)}
+                  {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
                 </time>
               </div>
             </Link>

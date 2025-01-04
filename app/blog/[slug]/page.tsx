@@ -31,7 +31,7 @@ export default async function BlogPost({ params }: Props) {
     <article className="mx-auto max-w-3xl pb-24 md:pb-10">
       <h1 className="mb-4 text-3xl font-bold md:text-4xl">{post.title}</h1>
       <time className="text-muted mb-12 block text-sm">
-        {formatDate(post.date)}
+        {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
       </time>
       <Image
         src={post.image}

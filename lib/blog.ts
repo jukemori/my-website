@@ -9,6 +9,14 @@ export interface BlogPost {
   image: string
   content: string
   tags?: string[]
+  readingTime: string
+}
+
+function calculateReadingTime(content: string): string {
+  const wordsPerMinute = 200
+  const words = content.trim().split(/\s+/).length
+  const minutes = Math.ceil(words / wordsPerMinute)
+  return `${minutes} min read`
 }
 
 export function getBlogPosts(): BlogPost[] {
@@ -33,6 +41,7 @@ export function getBlogPosts(): BlogPost[] {
         image: data.image,
         content,
         tags: data.tags || [],
+        readingTime: calculateReadingTime(content),
       }
     })
   })
