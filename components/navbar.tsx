@@ -29,12 +29,14 @@ interface NavLinkProps {
 }
 
 function NavLink({ href, label, icon: Icon }: NavLinkProps) {
+  const pathname = usePathname()
+
   return (
     <li>
       <Link
         href={href}
         className="text-muted data-[active=true]:text-primary data-[active=true]:border-primary hover:text-primary flex flex-col items-center text-xs font-medium transition-colors duration-300 data-[active=true]:font-bold sm:text-sm md:text-base md:data-[active=true]:border-b-2"
-        data-active={usePathname() === href}
+        data-active={pathname === href}
       >
         <Icon className="mb-1 h-5 w-5 md:hidden" /> {label}
       </Link>
