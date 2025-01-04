@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function About() {
+export default function AboutPage() {
   return (
     <div className="pb-24 md:pb-10">
       <h1 className="mb-8 text-3xl font-bold md:text-4xl">About Me</h1>

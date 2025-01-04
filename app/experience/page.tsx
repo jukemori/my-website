@@ -4,7 +4,7 @@ import skillsData from '@/content/experience/skills.json'
 import { ExperienceCard } from '@/components/experience-card'
 import { EducationCard } from '@/components/education-card'
 
-export default function Experience() {
+export default function ExperiencePage() {
   return (
     <div className="pb-24 md:pb-10">
       <section className="mb-16">
