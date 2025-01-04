@@ -5,7 +5,7 @@ interface TechIconProps {
   className?: string
 }
 
-export function TechIcon({ name, className = 'h-6 w-6' }: TechIconProps) {
+export function TechIcon({ name, className = 'h-5 w-5' }: TechIconProps) {
   const icons: Record<string, React.JSX.Element> = {
     nextjs: (
       <svg className={className} viewBox="0 0 128 128">
