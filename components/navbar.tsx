@@ -36,7 +36,7 @@ function NavLink({ href, label, icon: Icon }: NavLinkProps) {
         className="text-muted data-[active=true]:text-primary data-[active=true]:border-primary hover:text-primary flex flex-col items-center text-xs font-medium transition-colors duration-300 data-[active=true]:font-bold sm:text-sm md:text-base md:data-[active=true]:border-b-2"
         data-active={usePathname() === href}
       >
-        <Icon className="h-4 w-4 md:hidden" /> {label}
+        <Icon className="mb-1 h-5 w-5 md:hidden" /> {label}
       </Link>
     </li>
   )
@@ -149,7 +149,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="border-border safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-5 gap-8 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
+          <ul className="border-border safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-5 gap-4 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
