@@ -26,6 +26,9 @@ export default function BlogPage() {
                   className="mb-4 h-48 rounded-t-lg object-cover md:h-60"
                   width={700}
                   height={700}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL={post.image}
                 />
               )}
               <div className="p-4">

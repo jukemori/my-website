@@ -10,6 +10,9 @@ export default function Home() {
           src="/images/profile.webp"
           alt="Profile Picture"
           className="profile-glow mb-8 h-60 w-60 rounded-full object-cover md:h-72 md:w-72"
+          loading="eager"
+          placeholder="blur"
+          blurDataURL="/images/profile.webp"
         />
 
         <h1 className="mb-6 text-4xl font-bold md:text-5xl">Jun Ukemori</h1>
