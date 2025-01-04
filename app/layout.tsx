@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     'Software Engineer based in Tokyo, Japan. I like to build things with Next.js and Ruby on Rails.',
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   children,
 }: Readonly<{
