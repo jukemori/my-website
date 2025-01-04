@@ -8,7 +8,7 @@ export default function BlogPageLoading() {
         {Array.from({ length: 4 }).map((_, i) => (
           <li
             key={i}
-            className="border-border w-full max-w-96 rounded-lg border shadow md:max-w-full"
+            className="w-full max-w-96 rounded-lg shadow md:max-w-full"
           >
             <Skeleton className="h-48 rounded-t-lg md:h-60" />
 
