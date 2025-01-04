@@ -21,6 +21,12 @@
       "options": {
         "singleQuote": false
       }
+    },
+    {
+      "files": "*.mdx",
+      "options": {
+        "proseWrap": "always"
+      }
     }
   ]
 }
