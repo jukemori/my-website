@@ -23,7 +23,7 @@ export default function About() {
         <Image
           width={590}
           height={350}
-          src="/images/about/about-football.jpg"
+          src="/images/about/about-football.webp"
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
         />
@@ -45,7 +45,7 @@ export default function About() {
         <Image
           width={590}
           height={350}
-          src="/images/about/about-mexico.jpg"
+          src="/images/about/about-mexico.webp"
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
         />
@@ -82,7 +82,7 @@ export default function About() {
         <Image
           width={590}
           height={350}
-          src="/images/about/about-boxing.jpg"
+          src="/images/about/about-boxing.webp"
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
         />

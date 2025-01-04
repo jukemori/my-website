@@ -7,7 +7,7 @@ export default function Home() {
         <Image
           width={288}
           height={288}
-          src="/images/profile.png"
+          src="/images/profile.webp"
           alt="Profile Picture"
           className="profile-glow mb-8 h-60 w-60 rounded-full object-cover md:h-72 md:w-72"
         />
