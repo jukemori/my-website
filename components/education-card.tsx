@@ -1,3 +1,5 @@
+import { TechIcon } from './tech-icon'
+
 interface Education {
   school: string
   period: string
@@ -28,7 +30,7 @@ export function EducationCard({
       {technologies && (
         <div className="text-muted mt-4 flex flex-wrap gap-2">
           {technologies.map((tech) => (
-            <i key={tech} className={`devicon-${tech}-plain`}></i>
+            <TechIcon key={tech} name={tech} />
           ))}
         </div>
       )}
