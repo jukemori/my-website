@@ -20,7 +20,7 @@ export function ImageWithSkeleton({
         src={src}
         alt={alt}
         {...props}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
       />
     </div>
   )
