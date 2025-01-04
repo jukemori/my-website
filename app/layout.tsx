@@ -35,6 +35,9 @@ export const metadata: Metadata = {
       'Software Engineer based in Tokyo, Japan. I like to build things with Next.js and Ruby on Rails.',
     images: ['/images/profile.webp'],
   },
+  other: {
+    'line:image': '/images/profile.webp',
+  },
 }
 
 export const dynamic = 'force-dynamic'
