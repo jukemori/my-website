@@ -2,13 +2,14 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { BookOpen, Home, Moon, Sun, User } from 'lucide-react'
+import { BookOpen, Briefcase, Home, Moon, Sun, User } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
 
 const NAV_ITEMS = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: User },
+  { href: '/experience', label: 'Experience', icon: Briefcase },
   { href: '/blog', label: 'Blog', icon: BookOpen },
 ] as const
 
@@ -139,7 +140,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="border-border safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
+          <ul className="border-border safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-4 gap-8 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
