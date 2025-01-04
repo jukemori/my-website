@@ -29,8 +29,17 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-3xl pb-24 md:pb-10">
+      {post.tags && post.tags.length > 0 && (
+        <div className="mb-4 flex flex-wrap gap-2">
+          {post.tags.map((tag) => (
+            <span key={tag} className="text-muted text-lg">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
       <h1 className="mb-4 text-3xl font-bold md:text-4xl">{post.title}</h1>
-      <time className="text-muted mb-12 block text-sm">
+      <time className="text-muted mb-10 block text-sm">
         {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
       </time>
       <Image
