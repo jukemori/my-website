@@ -63,6 +63,20 @@ export default async function BlogPost({ params }: Props) {
           }}
         />
       </div>
+
+      <div className="border-border mt-16 border-t pt-6">
+        <p className="text-muted">
+          Subscribe to my blog posts via{' '}
+          <a
+            href="/feed.xml"
+            className="text-foreground hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            RSS Feed
+          </a>
+        </p>
+      </div>
     </article>
   )
 }
