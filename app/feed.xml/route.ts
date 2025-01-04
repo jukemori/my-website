@@ -29,7 +29,14 @@ export async function GET() {
       title: post.title,
       id: `${siteURL}/blog/${post.slug}`,
       link: `${siteURL}/blog/${post.slug}`,
-      description: post.content.slice(0, 200) + '...',
+      description:
+        post.content
+          .replace(/#{1,6}\s/g, '')
+          .replace(/(\*\*|__)(.*?)\1/g, '$2')
+          .replace(/(\*|_)(.*?)\1/g, '$2')
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+          .replace(/`{1,3}.*?`{1,3}/g, '')
+          .slice(0, 200) + '...',
       date: new Date(post.date),
       image: post.image ? `${siteURL}${post.image}` : undefined,
     })
