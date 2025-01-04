@@ -14,6 +14,27 @@ export const metadata: Metadata = {
   title: 'Jun Ukemori',
   description:
     'Software Engineer based in Tokyo, Japan. I like to build things with Next.js and Ruby on Rails.',
+  metadataBase: new URL('https://www.jun-ukemori.com/'),
+  openGraph: {
+    title: 'Jun Ukemori',
+    description:
+      'Software Engineer based in Tokyo, Japan. I like to build things with Next.js and Ruby on Rails.',
+    images: [
+      {
+        url: '/images/profile.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Jun Ukemori',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jun Ukemori',
+    description:
+      'Software Engineer based in Tokyo, Japan. I like to build things with Next.js and Ruby on Rails.',
+    images: ['/images/profile.webp'],
+  },
 }
 
 export const dynamic = 'force-dynamic'
