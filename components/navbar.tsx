@@ -75,8 +75,7 @@ export function Navbar() {
       bgExtension.style.width = '100%'
       bgExtension.style.zIndex = '99'
       bgExtension.style.height = '70px'
-      bgExtension.style.backgroundColor = 'hsl(var(--background)/90)'
-      bgExtension.style.backdropFilter = 'blur(4px)'
+      bgExtension.style.backgroundColor = 'hsl(var(--background))'
       bgExtension.style.transform = 'translateY(100%)'
       document.body.appendChild(bgExtension)
     }
@@ -140,7 +139,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="border-border safe-bottom bg-background/90 fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t pb-3 pt-3 backdrop-blur-sm md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
+          <ul className="border-border safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-3 gap-8 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
