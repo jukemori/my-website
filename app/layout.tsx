@@ -38,6 +38,11 @@ export const metadata: Metadata = {
   other: {
     'line:image': '/images/profile.webp',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://www.jun-ukemori.com/feed.xml',
+    },
+  },
 }
 
 export const dynamic = 'force-dynamic'
