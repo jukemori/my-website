@@ -19,7 +19,7 @@ export function EducationCard({
 }: Education) {
   return (
     <div className="mb-8">
-      <h3 className="text-lg font-bold">{school}</h3>
+      <h3 className="text-xl font-bold">{school}</h3>
       <p className="text-muted text-sm leading-relaxed">{period}</p>
       <p className="text-muted mb-2 text-sm leading-relaxed">{location}</p>
       <p className="text-muted leading-relaxed">{degree}</p>

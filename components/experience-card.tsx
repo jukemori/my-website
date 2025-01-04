@@ -17,7 +17,7 @@ export function ExperienceCard({
 }: WorkExperience) {
   return (
     <div className="mb-8">
-      <h3 className="mb-2 text-lg font-bold">{company}</h3>
+      <h3 className="mb-2 text-xl font-bold">{company}</h3>
       <div className="mb-8">
         <p className="font-bold leading-relaxed">{position}</p>
         <p className="text-muted text-sm leading-relaxed">{period}</p>

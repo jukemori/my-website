@@ -7,17 +7,15 @@ import { EducationCard } from '@/components/education-card'
 export default function Experience() {
   return (
     <div className="pb-24 md:pb-10">
-      <h1 className="mb-12 text-3xl font-bold md:text-4xl">Experience</h1>
-
       <section className="mb-16">
-        <h2 className="mb-6 text-2xl font-bold">Work Experience</h2>
+        <h1 className="mb-8 text-3xl font-bold md:text-4xl">Work Experience</h1>
         {workExperiencesData.experiences.map((exp) => (
           <ExperienceCard key={exp.company} {...exp} />
         ))}
       </section>
 
       <section className="mb-16">
-        <h2 className="mb-6 text-2xl font-bold">Education</h2>
+        <h1 className="mb-8 text-3xl font-bold md:text-4xl">Education</h1>
         {educationData.education.map((edu) => (
           <EducationCard key={edu.school} {...edu} />
         ))}
@@ -25,7 +23,7 @@ export default function Experience() {
 
       <section className="grid gap-8 md:grid-cols-2">
         <div>
-          <h2 className="mb-4 text-2xl font-semibold">Top Skills</h2>
+          <h2 className="mb-8 text-3xl font-bold md:text-4xl">Top Skills</h2>
           <ul className="text-muted ml-6 list-disc">
             {skillsData.topSkills.map((skill) => (
               <li key={skill}>{skill}</li>
@@ -34,7 +32,7 @@ export default function Experience() {
         </div>
 
         <div>
-          <h2 className="mb-4 text-2xl font-semibold">Languages</h2>
+          <h2 className="mb-8 text-3xl font-bold md:text-4xl">Languages</h2>
           <ul className="text-muted ml-6 list-disc">
             {skillsData.languages.map(({ language, level }) => (
               <li key={language}>
