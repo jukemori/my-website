@@ -55,8 +55,16 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
-  	}
+  		},
+    },
+    hljs: {
+      theme: "github-dark",
+    },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography'),require("tailwind-highlightjs")],
+  safelist: [
+    {
+      pattern: /hljs+/,
+    },
+  ],
 } satisfies Config;

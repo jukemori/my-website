@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { formatDate } from '@/lib/blog'
+import rehypeHighlight from 'rehype-highlight'
 
 type Props = {
   params: Promise<{
@@ -40,7 +41,14 @@ export default async function BlogPost({ params }: Props) {
         height={700}
       />
       <div className="prose dark:prose-invert prose-p:text-muted max-w-none">
-        <MDXRemote source={post.content} />
+        <MDXRemote
+          source={post.content}
+          options={{
+            mdxOptions: {
+              rehypePlugins: [[rehypeHighlight]],
+            },
+          }}
+        />
       </div>
     </article>
   )
