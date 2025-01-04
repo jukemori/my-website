@@ -28,7 +28,7 @@ export default async function BlogPost({ params }: Props) {
   }
 
   return (
-    <article className="mx-auto max-w-3xl">
+    <article className="mx-auto max-w-3xl pb-24 md:pb-0">
       <h1 className="mb-4 text-3xl font-bold md:text-4xl">{post.title}</h1>
       <time className="text-muted mb-12 block text-sm">
         {formatDate(post.date)}

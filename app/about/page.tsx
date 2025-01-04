@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function About() {
   return (
-    <>
+    <div className="pb-24 md:pb-0">
       <h1 className="mb-8 text-3xl font-bold md:text-4xl">About Me</h1>
 
       <section className="mb-8">
@@ -102,6 +102,6 @@ export default function About() {
           to new destinations.
         </p>
       </section>
-    </>
+    </div>
   )
 }
