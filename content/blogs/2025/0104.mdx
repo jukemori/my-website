@@ -1,0 +1,111 @@
+---
+title: 'My First Blog'
+date: '2025-01-04'
+slug: 'my-first-blog'
+image: '/images/blogs/2025/0104/main.webp'
+tags: ['Journal', 'Nextjs']
+---
+
+## Welcome to my blog!
+
+I'm so excited to start this blog!! As a software engineer, I'm going to use
+this blog to write about tech, lifestyle, and whatever else pops into my head.
+
+The reason I'm starting this blog is because my ex coworker,
+[Kohei](https://www.jujekebab.com/) was blogging from his website and I wanted
+to try it out.
+
+I'm not a journal person, but I think it's a good way to leave a record of
+what's going on in my life and look back on it later. Sometimes I write
+technical blogs on [medium](https://medium.com/@jukemori), but I want to write
+less professional blogs here and not worry about the quality of my writing.
+
+## So I created my new website
+
+Since the first week of January is holiday in Japan, I decided to create my blog
+site before my work starts. I created this website using Next.js, TailwindCSS,
+Typescript, and MDX. I was gonna use Sanity or other headless CMS but Kohei
+recommended me to keep the blog data in just files just because it's simpler.
+Plus, if I ever want to switch platforms, I can just move my files. So I decided
+to use this simple way.
+
+It was actually very simple to create a blog site with Next.js and MDX.
+
+Here's how you can create blog.ts in the lib folder to generate blog posts from
+the files in the content/blogs folder:
+
+```ts
+// lib/blog.ts
+
+export interface BlogPost {
+  slug: string
+  title: string
+  date: string
+  content: string
+}
+
+export function getBlogPosts(): BlogPost[] {
+  const postsDirectory = path.join(process.cwd(), 'content/blogs')
+  const files = fs.readdirSync(postsDirectory)
+
+  const posts = files.map((fileName) => {
+    const fullPath = path.join(postsDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    const { data, content } = matter(fileContents)
+
+    return {
+      slug: fileName.replace(/\.mdx$/, ''),
+      title: data.title,
+      date: data.date,
+      content,
+    }
+  })
+
+  return posts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  )
+}
+```
+
+To render the blog list, consider using the following approach:
+
+```tsx
+import { getBlogPosts } from '@/lib/blog'
+import Link from 'next/link'
+
+export default async function BlogPage() {
+  const posts = await getBlogPosts()
+
+  return (
+    <div className="pb-24">
+      <h1 className="mb-8 text-3xl font-bold">Blog Posts</h1>
+      <ul className="space-y-4">
+        {posts.map((post) => (
+          <li key={post.slug} className="rounded-lg border p-4">
+            <Link href={`/blog/${post.slug}`}>
+              <h3 className="text-xl font-semibold">{post.title}</h3>
+              <time className="text-sm text-gray-500">{post.date}</time>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+An example of writing a blog in markdown:
+
+```mdx
+---
+title: 'My First Blog'
+date: '2025-01-05'
+slug: 'my-first-blog'
+---
+
+## Welcome to my blog!
+```
+
+My goal is to write at least one blog post per month! Let's see how it goes!
+
+---
