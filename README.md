@@ -41,8 +41,9 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 
 - `app/` - Next.js app router pages and components
 - `components/` - Reusable UI components
-- `styles/` - Global styles and Tailwind configuration
 - `content/` - MDX files and json files for web contents.
+- `lib/` - Utility functions
+- `public/` - Static assets
 
 ## Features
 
