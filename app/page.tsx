@@ -17,11 +17,11 @@ export default function Home() {
         />
 
         <h1 className="mb-6 text-4xl font-bold md:text-5xl">Jun Ukemori</h1>
-        <h3 className="text-muted mb-8 text-base md:text-lg">
+        <h3 className="mb-8 text-base text-muted md:text-lg">
           Software Engineer in Tokyo
         </h3>
 
-        <div className="mb-24 flex justify-center gap-12">
+        <div className="mb-24 flex justify-center gap-8">
           <a
             href="https://www.instagram.com/tinyjap/"
             target="_blank"
@@ -75,6 +75,20 @@ export default function Home() {
               viewBox="0 0 24 24"
             >
               <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+            </svg>
+          </a>
+
+          <a
+            href="https://bsky.app/profile/jukemori.bsky.social"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              className="h-5 w-5 transition-opacity hover:opacity-70"
+              fill="hsl(var(--primary))"
+              viewBox="0 -3.268 64 68.414"
+            >
+              <path d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805zm36.254 0C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745z" />
             </svg>
           </a>
         </div>
