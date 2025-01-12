@@ -6,7 +6,18 @@
       "period": "January 2025 - Present",
       "location": "Kanagawa, Japan",
       "description": "Software development of logistics management system.",
-      "technologies": ["nextjs", "react", "typescript", "tailwindcss", "go"]
+      "technologies": [
+        "nextjs",
+        "react",
+        "typescript",
+        "tailwindcss",
+        "storybook",
+        "graphql",
+        "nodejs",
+        "go",
+        "docker",
+        "git"
+      ]
     },
     {
       "company": "Sutrix Solutions Japan",
