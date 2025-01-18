@@ -30,10 +30,25 @@ The app allows users to:
 - Share calendars with others
 - Share and edit notes for shared calendars
 
+To implement the calendar UI, I used the
+[Syncfusion library](https://www.syncfusion.com/). Acquiring a community license
+key was easy, but integrating it with Ruby on Rails was challenging due to
+limited documentation. This led me to write an
+[article](https://medium.com/stackademic/connecting-syncfusion-schedule-component-with-nextjs-and-ruby-on-rails-ae2b440cf924)
+about the integration.
+
+![Calendar App Screenshot 2](/images/blogs/2025/0118/sub2.webp)
+
 For the first time, I implemented WebSockets to enable live notifications, which
 was a fun challenge to figure out.
 
-![Calendar App Screenshot 2](/images/blogs/2025/0118/sub2.webp)
+Building the database schema from scratch was a big learning moment for me.
+Setting up relational tables and designing everything from zero isn’t something
+I do every day at work, so it was both challenging and fun. I even created a
+diagram of the schema to map everything out. It really helped me understand it
+better by drawing it myself.
+
+![Calendar App Screenshot 3](/images/blogs/2025/0118/sub3.webp)
 
 ## Lessons Learned
 
@@ -44,11 +59,11 @@ matter how simple it is.
 
 For this project, I used:
 
-- **Next.js**
-- **Tailwind**
-- **ShadCN UI**
-- **Ruby on Rails**
-- **Docker**
+- Next.js
+- Tailwind
+- ShadCN UI
+- Ruby on Rails
+- Docker
 
 ## Why Building Projects Matters
 
