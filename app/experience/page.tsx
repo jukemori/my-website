@@ -1,8 +1,8 @@
 import workExperiencesData from '@/content/experience/workExperience.json'
 import educationData from '@/content/experience/education.json'
 import skillsData from '@/content/experience/skills.json'
-import { ExperienceCard } from '@/components/experience-card'
-import { EducationCard } from '@/components/education-card'
+import { ExperienceCard } from '@/app/experience/_components/experience-card'
+import { EducationCard } from '@/app/experience/_components/education-card'
 
 export default function ExperiencePage() {
   return (
@@ -24,7 +24,7 @@ export default function ExperiencePage() {
       <section className="grid gap-8 md:grid-cols-2">
         <div>
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Top Skills</h2>
-          <ul className="text-muted ml-6 list-disc">
+          <ul className="ml-6 list-disc text-muted">
             {skillsData.topSkills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
@@ -33,7 +33,7 @@ export default function ExperiencePage() {
 
         <div>
           <h2 className="mb-8 text-3xl font-bold md:text-4xl">Languages</h2>
-          <ul className="text-muted ml-6 list-disc">
+          <ul className="ml-6 list-disc text-muted">
             {skillsData.languages.map(({ language, level }) => (
               <li key={language}>
                 {language} ({level})
