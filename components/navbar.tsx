@@ -18,7 +18,7 @@ const NAV_ITEMS = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/about', label: 'About', icon: User },
   { href: '/experience', label: 'Experience', icon: BriefcaseBusiness },
-  { href: '/works', label: 'Works', icon: FolderKanban },
+  { href: '/projects', label: 'Projects', icon: FolderKanban },
   { href: '/blog', label: 'Blog', icon: BookOpen },
 ] as const
 
@@ -35,7 +35,7 @@ function NavLink({ href, label, icon: Icon }: NavLinkProps) {
     <li>
       <Link
         href={href}
-        className="text-muted data-[active=true]:text-primary data-[active=true]:border-primary hover:text-primary flex flex-col items-center text-xs font-medium transition-colors duration-300 data-[active=true]:font-bold sm:text-sm md:text-base md:data-[active=true]:border-b-2"
+        className="flex flex-col items-center text-xs font-medium text-muted transition-colors duration-300 hover:text-primary data-[active=true]:border-primary data-[active=true]:font-bold data-[active=true]:text-primary sm:text-sm md:text-base md:data-[active=true]:border-b-2"
         data-active={pathname === href}
       >
         <Icon className="mb-1 h-5 w-5 md:hidden" /> {label}
@@ -54,8 +54,8 @@ function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <div className="relative">
-        <Sun className="h-5 w-5 rotate-90 scale-0 transition-all md:h-4 md:w-4 dark:rotate-0 dark:scale-100" />
-        <Moon className="absolute left-0 top-0 h-5 w-5 rotate-0 scale-100 transition-all md:h-4 md:w-4 dark:-rotate-90 dark:scale-0" />
+        <Sun className="h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 md:h-4 md:w-4" />
+        <Moon className="absolute left-0 top-0 h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 md:h-4 md:w-4" />
       </div>
     </button>
   )
@@ -116,7 +116,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="header md:bg-background/90 fixed left-0 top-0 z-[100] w-full bg-background md:backdrop-blur-sm">
+    <header className="header fixed left-0 top-0 z-[100] w-full bg-background md:bg-background/90 md:backdrop-blur-sm">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
         <Link href="/" className="relative h-[30px] w-[30px]">
           <svg
@@ -151,7 +151,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="border-border safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-5 gap-4 border-t bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
+          <ul className="safe-bottom md:background-transparent fixed bottom-0 left-0 z-[100] grid w-full grid-cols-5 gap-4 border-t border-border bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}
