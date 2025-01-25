@@ -1,0 +1,42 @@
+[
+  {
+    "title": "MingleTime",
+    "description": "MingleTime is a group calendar scheduling application that allows users to manage calendars, events, and collaborate with friends and family.",
+    "image": {
+      "src": "/images/projects/mingletime/main.webp",
+      "alt": "MingleTime application screenshot"
+    },
+    "techStack": [
+      "nextjs",
+      "react",
+      "typescript",
+      "tailwindcss",
+      "rails",
+      "ruby",
+      "postgresql",
+      "docker"
+    ],
+    "links": [
+      {
+        "href": "https://mingletime.vercel.app/",
+        "label": "Demo",
+        "icon": "ExternalLink"
+      },
+      {
+        "href": "/blog/i-created-a-calendar-app",
+        "label": "Blog",
+        "icon": "BookOpen"
+      },
+      {
+        "href": "https://github.com/jukemori/group-scheduler",
+        "label": "Frontend",
+        "icon": "GithubIcon"
+      },
+      {
+        "href": "https://github.com/jukemori/group_scheduler_api",
+        "label": "Backend",
+        "icon": "GithubIcon"
+      }
+    ]
+  }
+]
