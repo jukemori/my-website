@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '@/components/skeleton'
 
 export function ImageWithSkeleton({
   src,
