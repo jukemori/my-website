@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProjectCard } from '@/app/projects/_components/project-card'
 import projectData from '@/content/projects/projects.json'
-import { Project } from '@/app/projects/_components/project-card'
+import { Project } from './_lib/types'
 
 const typedProjectData = projectData as Project[]
 
