@@ -1,4 +1,4 @@
-import { TechIcon } from '../../../components/tech-icon'
+import { TechIcon } from '@/components/icons/tech-icon'
 
 interface Education {
   school: string

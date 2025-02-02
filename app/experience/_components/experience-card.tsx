@@ -1,4 +1,4 @@
-import { TechIcon } from '@/components/tech-icon'
+import { TechIcon } from '@/components/icons/tech-icon'
 
 interface WorkExperience {
   company: string
@@ -22,12 +22,12 @@ export function ExperienceCard({
       <h3 className="mb-2 text-xl font-bold">{company}</h3>
       <div className="mb-8">
         <p className="font-bold leading-relaxed">{position}</p>
-        <p className="text-muted text-sm leading-relaxed">{period}</p>
-        <p className="text-muted text-sm leading-relaxed">{location}</p>
-        <p className="text-muted mt-2 leading-relaxed">{description}</p>
+        <p className="text-sm leading-relaxed text-muted">{period}</p>
+        <p className="text-sm leading-relaxed text-muted">{location}</p>
+        <p className="mt-2 leading-relaxed text-muted">{description}</p>
 
         {technologies && (
-          <div className="text-muted mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 text-muted">
             {technologies.map((tech) => (
               <TechIcon key={tech} name={tech} />
             ))}
