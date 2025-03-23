@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import profileImage from '@/public/images/profile.webp'
 
 export default function Home() {
   return (
@@ -7,13 +8,11 @@ export default function Home() {
         <Image
           width={288}
           height={288}
-          src="/images/profile.webp"
+          src={profileImage}
           alt="Profile Picture"
           className="profile-glow mb-8 h-60 w-60 rounded-full object-cover md:h-72 md:w-72"
           priority
-          loading="eager"
           placeholder="blur"
-          blurDataURL="/images/profile.webp"
         />
 
         <h1 className="mb-6 text-4xl font-bold md:text-5xl">Jun Ukemori</h1>

@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import footballImage from '@/public/images/about/about-football.webp'
+import mexicoImage from '@/public/images/about/about-mexico.webp'
+import boxingImage from '@/public/images/about/about-boxing.webp'
 
 export default function AboutPage() {
   return (
@@ -23,9 +26,11 @@ export default function AboutPage() {
         <Image
           width={590}
           height={350}
-          src="/images/about/about-football.webp"
+          src={footballImage}
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
+          priority
+          placeholder="blur"
         />
         <p className="mb-5 leading-relaxed text-muted">
           In 2019, I unexpectedly developed a passion for learning Spanish.
@@ -45,9 +50,10 @@ export default function AboutPage() {
         <Image
           width={590}
           height={350}
-          src="/images/about/about-mexico.webp"
+          src={mexicoImage}
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
+          placeholder="blur"
         />
       </section>
 
@@ -81,9 +87,10 @@ export default function AboutPage() {
         <Image
           width={590}
           height={350}
-          src="/images/about/about-boxing.webp"
+          src={boxingImage}
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
+          placeholder="blur"
         />
       </section>
 
