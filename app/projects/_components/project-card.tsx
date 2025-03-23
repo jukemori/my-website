@@ -4,9 +4,13 @@ import { ProjectLink } from './project-link'
 import { ProjectImage } from './project-image'
 import { ProjectCardProps } from '../_lib/types'
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
+export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
   <div className="grid gap-8 md:grid-cols-2">
-    <ProjectImage src={project.image.src} alt={project.image.alt} />
+    <ProjectImage
+      src={project.image.src}
+      alt={project.image.alt}
+      priority={index < 2}
+    />
 
     <div className="flex flex-col space-y-6">
       <div>
