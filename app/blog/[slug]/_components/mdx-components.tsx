@@ -19,10 +19,37 @@ function MdxImage({
       alt={alt || 'Blog image'}
       width={700}
       height={400}
-      className="mx-auto my-8 rounded-lg shadow-md"
+      className="my-8 w-full shadow-md"
       imageType="hero"
       {...props}
     />
+  )
+}
+
+// Custom Portrait Image component for images where height > width
+function PortraitImage({
+  src,
+  alt,
+  ...props
+}: {
+  src: string
+  alt?: string
+} & Record<string, unknown>) {
+  // Handle relative image paths
+  const imageSrc = src.startsWith('/') ? src : `/${src}`
+
+  return (
+    <div className="my-8 flex justify-center">
+      <OptimizedImage
+        src={imageSrc}
+        alt={alt || 'Blog image'}
+        width={400}
+        height={600}
+        className="max-w-md shadow-md"
+        imageType="content"
+        {...props}
+      />
+    </div>
   )
 }
 
@@ -84,6 +111,7 @@ function MdxCode({ children }: { children: ReactNode }) {
 export const mdxComponents = {
   // Replace default img with optimized version
   img: MdxImage,
+  PortraitImage,
 
   // Enhanced typography
   h2: MdxHeading2,
