@@ -1,7 +1,7 @@
 import { getBlogPosts } from '@/lib/blog'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
+import { OptimizedImage } from '@/components/optimized-image'
 import { formatDate } from '@/lib/blog'
 import rehypeHighlight from 'rehype-highlight'
 
@@ -32,28 +32,26 @@ export default async function BlogPost({ params }: Props) {
       {post.tags && post.tags.length > 0 && (
         <div className="mb-4 flex flex-wrap gap-2">
           {post.tags.map((tag) => (
-            <span key={tag} className="text-muted text-lg">
+            <span key={tag} className="text-lg text-muted">
               {tag}
             </span>
           ))}
         </div>
       )}
       <h1 className="mb-4 text-3xl font-bold md:text-4xl">{post.title}</h1>
-      <time className="text-muted mb-10 block text-sm">
+      <time className="mb-10 block text-sm text-muted">
         {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
       </time>
-      <Image
+      <OptimizedImage
         src={post.image}
         alt={post.title}
         className="mb-8 h-auto w-full object-cover md:h-96"
         width={700}
         height={700}
         priority
-        loading="eager"
-        placeholder="blur"
-        blurDataURL={post.image}
+        imageType="hero"
       />
-      <div className="prose dark:prose-invert prose-p:text-muted max-w-none">
+      <div className="prose max-w-none dark:prose-invert prose-p:text-muted">
         <MDXRemote
           source={post.content}
           options={{
@@ -64,7 +62,7 @@ export default async function BlogPost({ params }: Props) {
         />
       </div>
 
-      <div className="border-border mt-16 border-t pt-6">
+      <div className="mt-16 border-t border-border pt-6">
         <p className="text-muted">
           Subscribe to my blog posts via{' '}
           <a

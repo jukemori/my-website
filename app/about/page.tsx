@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { OptimizedImage } from '@/components/optimized-image'
 import footballImage from '@/public/images/about/about-football.webp'
 import mexicoImage from '@/public/images/about/about-mexico.webp'
 import boxingImage from '@/public/images/about/about-boxing.webp'
@@ -23,14 +23,14 @@ export default function AboutPage() {
           playing collegiate football, I explored various career paths but
           struggled to find a clear direction.
         </p>
-        <Image
+        <OptimizedImage
           width={590}
           height={350}
           src={footballImage}
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
           priority
-          placeholder="blur"
+          imageType="content"
         />
         <p className="mb-5 leading-relaxed text-muted">
           In 2019, I unexpectedly developed a passion for learning Spanish.
@@ -47,13 +47,13 @@ export default function AboutPage() {
           my journey as a frontend developer in Tokyo.
         </p>
 
-        <Image
+        <OptimizedImage
           width={590}
           height={350}
           src={mexicoImage}
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
-          placeholder="blur"
+          imageType="content"
         />
       </section>
 
@@ -84,28 +84,29 @@ export default function AboutPage() {
           experiences. My role enables me to apply my technical expertise while
           continuously growing and tackling new challenges.
         </p>
-        <Image
+        <OptimizedImage
           width={590}
           height={350}
           src={boxingImage}
           alt="about image"
           className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
-          placeholder="blur"
+          imageType="content"
         />
       </section>
 
       <section className="mb-8">
         <h2 className="mb-5 text-xl font-semibold">Interests</h2>
         <p className="mb-5 leading-relaxed text-muted">
-          When I&apos;m not coding, I&apos;m on the sports field. Football has
-          been a lifelong passion—I played through college and still join
-          weekend pick-up games. I&apos;m also a Manchester United fan. During
-          my time in Mexico, I discovered boxing, trained for three years, and
-          continue to enjoy it today.
+          Beyond programming, I&apos;m passionate about exploring different
+          cultures and languages. My experiences living in multiple countries
+          have shaped my perspective and fueled my curiosity for understanding
+          diverse viewpoints and approaches to problem-solving.
         </p>
         <p className="mb-5 leading-relaxed text-muted">
-          In my downtime, I love binge-watching Spanish TV shows and traveling
-          to new destinations.
+          I enjoy staying active through boxing and other sports, which helps me
+          maintain focus and discipline in both my personal and professional
+          life. I also love traveling and discovering new places, which often
+          provides fresh inspiration for my work.
         </p>
       </section>
     </div>
