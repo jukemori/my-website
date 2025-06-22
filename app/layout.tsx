@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
+import { WebVitals } from '@/components/web-vitals'
 import './globals.css'
 
 const poppins = Poppins({
@@ -64,6 +65,7 @@ export default function RootLayout({
             <main className="mx-auto max-w-4xl pt-16">{children}</main>
           </div>
         </ThemeProvider>
+        <WebVitals />
       </body>
     </html>
   )
