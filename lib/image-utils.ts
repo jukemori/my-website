@@ -3,20 +3,27 @@
  */
 
 /**
- * Generates optimized blur data URL for better perceived performance
+ * Generates blur data URL that matches skeleton loading colors (primary/10 with pulse)
  * @param width - Image width
  * @param height - Image height
- * @param color - Background color (default: #e2e8f0)
- * @returns Base64 encoded SVG blur placeholder
+ * @returns Base64 encoded SVG blur placeholder matching skeleton style
  */
-export function generateBlurDataURL(
-  width: number,
-  height: number,
-  color: string = '#e2e8f0',
-): string {
+export function generateBlurDataURL(width: number, height: number): string {
+  // Match the skeleton's bg-primary/10 color and add subtle pulse animation
+  // Using CSS custom properties that will match your theme
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
-      <rect width="100%" height="100%" fill="${color}"/>
+      <defs>
+        <radialGradient id="skeleton-gradient" cx="50%" cy="50%" r="70%">
+          <stop offset="0%" style="stop-color:hsl(var(--primary));stop-opacity:0.08" />
+          <stop offset="50%" style="stop-color:hsl(var(--primary));stop-opacity:0.12" />
+          <stop offset="100%" style="stop-color:hsl(var(--primary));stop-opacity:0.06" />
+        </radialGradient>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#skeleton-gradient)" rx="6">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </rect>
     </svg>
   `
 
@@ -42,39 +49,3 @@ export const IMAGE_SIZES = {
   // For content images
   content: '(max-width: 768px) 350px, 590px',
 } as const
-
-/**
- * Image priority calculation based on position
- * @param index - Image index in a list
- * @param threshold - Number of images to prioritize (default: 2)
- * @returns Whether the image should be prioritized
- */
-export function shouldPrioritizeImage(
-  index: number,
-  threshold: number = 2,
-): boolean {
-  return index < threshold
-}
-
-/**
- * Get optimal image dimensions for different screen sizes
- * @param baseWidth - Base width for desktop
- * @param baseHeight - Base height for desktop
- * @returns Object with responsive dimensions
- */
-export function getResponsiveDimensions(baseWidth: number, baseHeight: number) {
-  return {
-    mobile: {
-      width: Math.round(baseWidth * 0.6),
-      height: Math.round(baseHeight * 0.6),
-    },
-    tablet: {
-      width: Math.round(baseWidth * 0.8),
-      height: Math.round(baseHeight * 0.8),
-    },
-    desktop: {
-      width: baseWidth,
-      height: baseHeight,
-    },
-  }
-}
