@@ -3,40 +3,28 @@
  */
 
 /**
- * Generates blur data URL with a neutral color that works well across themes
- * @param width - Image width
- * @param height - Image height
- * @returns Base64 encoded SVG blur placeholder with neutral styling
+ * Pre-generated blur data URL to avoid runtime generation
+ * Uses a 4x3 aspect ratio as a reasonable default
  */
-export function generateBlurDataURL(width: number, height: number): string {
-  // Use a subtle neutral gray that works well in both light and dark themes
-  const fillColor = '#f1f5f9' // Very light neutral gray
-
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
-      <rect width="100%" height="100%" fill="${fillColor}" rx="6"/>
-    </svg>
-  `
-
-  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`
-}
+export const BLUR_DATA_URL = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjMiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmMWY1ZjkiIHJ4PSIxIi8+PC9zdmc+'
 
 /**
  * Common responsive sizes for different image types
+ * Optimized for performance with more granular breakpoints
  */
 export const IMAGE_SIZES = {
-  // For blog thumbnails
-  blogThumbnail: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px',
+  // For blog thumbnails in grid
+  blogThumbnail: '(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 400px',
 
   // For project images
-  project: '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 590px',
+  project: '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 50vw, 590px',
 
-  // For full-width hero images
-  hero: '(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 700px',
+  // For full-width hero images in blog posts
+  hero: '(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, (max-width: 1280px) 700px, 900px',
 
   // For profile/avatar images
-  profile: '(max-width: 768px) 240px, 288px',
+  profile: '(max-width: 640px) 240px, (max-width: 768px) 240px, 288px',
 
-  // For content images
-  content: '(max-width: 768px) 350px, 590px',
+  // For content images in about page and MDX
+  content: '(max-width: 640px) 350px, (max-width: 768px) 350px, (max-width: 1024px) 590px, 590px',
 } as const

@@ -1,28 +1,31 @@
-import { OptimizedImage } from '@/components/optimized-image'
+import { LazyImage } from '@/components/lazy-image'
 import { ReactNode } from 'react'
 
 // Custom Image component for MDX content
 function MdxImage({
   src,
   alt,
-  ...props
+  priority,
 }: {
   src: string
   alt?: string
-} & Record<string, unknown>) {
+  priority?: boolean
+}) {
   // Handle relative image paths
   const imageSrc = src.startsWith('/') ? src : `/${src}`
 
   return (
-    <OptimizedImage
-      src={imageSrc}
-      alt={alt || 'Blog image'}
-      width={700}
-      height={400}
-      className="my-8 w-full shadow-md"
-      imageType="hero"
-      {...props}
-    />
+    <div className="my-8 w-full">
+      <LazyImage
+        src={imageSrc}
+        alt={alt || 'Blog image'}
+        width={700}
+        height={400}
+        className="h-auto w-full rounded-lg shadow-md"
+        imageType="hero"
+        priority={priority}
+      />
+    </div>
   )
 }
 
@@ -30,25 +33,28 @@ function MdxImage({
 function PortraitImage({
   src,
   alt,
-  ...props
+  priority,
 }: {
   src: string
   alt?: string
-} & Record<string, unknown>) {
+  priority?: boolean
+}) {
   // Handle relative image paths
   const imageSrc = src.startsWith('/') ? src : `/${src}`
 
   return (
     <div className="my-8 flex justify-center">
-      <OptimizedImage
-        src={imageSrc}
-        alt={alt || 'Blog image'}
-        width={400}
-        height={600}
-        className="max-w-md shadow-md"
-        imageType="content"
-        {...props}
-      />
+      <div className="max-w-md">
+        <LazyImage
+          src={imageSrc}
+          alt={alt || 'Blog image'}
+          width={400}
+          height={600}
+          className="h-auto w-full rounded-lg shadow-md"
+          imageType="content"
+          priority={priority}
+        />
+      </div>
     </div>
   )
 }
@@ -100,11 +106,7 @@ function MdxBlockquote({ children }: { children: ReactNode }) {
 }
 
 function MdxCode({ children }: { children: ReactNode }) {
-  return (
-    <code className="rounded bg-muted px-2 py-1 font-mono text-sm">
-      {children}
-    </code>
-  )
+  return <code className="rounded px-2 py-1 font-mono text-sm">{children}</code>
 }
 
 // Export all custom components

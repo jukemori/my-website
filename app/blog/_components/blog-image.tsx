@@ -1,4 +1,4 @@
-import { OptimizedImage } from '@/components/optimized-image'
+import { LazyImage } from '@/components/lazy-image'
 
 export function BlogImage({
   src,
@@ -10,14 +10,16 @@ export function BlogImage({
   priority?: boolean
 }) {
   return (
-    <OptimizedImage
-      src={src}
-      alt={alt}
-      className="h-48 rounded-t-lg object-cover md:h-60"
-      width={700}
-      height={700}
-      priority={priority}
-      imageType="blogThumbnail"
-    />
+    <div className="relative h-48 w-full overflow-hidden rounded-t-lg md:h-60">
+      <LazyImage
+        src={src}
+        alt={alt}
+        className="h-full w-full object-cover"
+        width={700}
+        height={400}
+        priority={priority}
+        imageType="blogThumbnail"
+      />
+    </div>
   )
 }

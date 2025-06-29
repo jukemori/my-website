@@ -23,15 +23,17 @@ export default function AboutPage() {
           playing collegiate football, I explored various career paths but
           struggled to find a clear direction.
         </p>
-        <OptimizedImage
-          width={590}
-          height={350}
-          src={footballImage}
-          alt="about image"
-          className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
-          priority
-          imageType="content"
-        />
+        <div className="mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]">
+          <OptimizedImage
+            width={590}
+            height={350}
+            src={footballImage}
+            alt="about image"
+            className="h-full w-full object-cover"
+            priority
+            imageType="content"
+          />
+        </div>
         <p className="mb-5 leading-relaxed text-muted">
           In 2019, I unexpectedly developed a passion for learning Spanish.
           Despite struggling with the language in high school and college, I
@@ -47,14 +49,16 @@ export default function AboutPage() {
           my journey as a frontend developer in Tokyo.
         </p>
 
-        <OptimizedImage
-          width={590}
-          height={350}
-          src={mexicoImage}
-          alt="about image"
-          className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
-          imageType="content"
-        />
+        <div className="mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]">
+          <OptimizedImage
+            width={590}
+            height={350}
+            src={mexicoImage}
+            alt="about image"
+            className="h-full w-full object-cover"
+            imageType="content"
+          />
+        </div>
       </section>
 
       <section className="mb-8">
@@ -84,14 +88,16 @@ export default function AboutPage() {
           experiences. My role enables me to apply my technical expertise while
           continuously growing and tackling new challenges.
         </p>
-        <OptimizedImage
-          width={590}
-          height={350}
-          src={boxingImage}
-          alt="about image"
-          className="mx-auto my-12 h-[250px] w-[350px] rounded-lg object-cover shadow-lg md:h-[350px] md:w-[590px]"
-          imageType="content"
-        />
+        <div className="mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]">
+          <OptimizedImage
+            width={590}
+            height={350}
+            src={boxingImage}
+            alt="about image"
+            className="h-full w-full object-cover"
+            imageType="content"
+          />
+        </div>
       </section>
 
       <section className="mb-8">

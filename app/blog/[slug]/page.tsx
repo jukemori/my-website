@@ -43,15 +43,17 @@ export default async function BlogPost({ params }: Props) {
       <time className="mb-10 block text-sm text-muted">
         {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
       </time>
-      <OptimizedImage
-        src={post.image}
-        alt={post.title}
-        className="mb-8 h-auto w-full object-cover md:h-96"
-        width={700}
-        height={700}
-        priority
-        imageType="hero"
-      />
+      <div className="mb-8 w-full">
+        <OptimizedImage
+          src={post.image}
+          alt={post.title}
+          className="h-auto w-full rounded-lg"
+          width={900}
+          height={500}
+          priority
+          imageType="hero"
+        />
+      </div>
       <div className="prose max-w-none dark:prose-invert prose-p:text-muted">
         <MDXRemote
           source={post.content}
