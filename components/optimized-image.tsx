@@ -5,6 +5,7 @@ interface OptimizedImageProps
   extends Omit<ImageProps, 'placeholder' | 'blurDataURL' | 'sizes'> {
   imageType?: keyof typeof IMAGE_SIZES
   loading?: 'lazy' | 'eager'
+  style?: React.CSSProperties
 }
 
 export function OptimizedImage({
@@ -24,7 +25,7 @@ export function OptimizedImage({
       alt={alt}
       width={width}
       height={height}
-      className={`${className} transition-opacity duration-300`}
+      className={`${className} transition-opacity duration-700 ease-in-out`}
       placeholder="blur"
       blurDataURL={BLUR_DATA_URL}
       sizes={IMAGE_SIZES[imageType]}

@@ -23,25 +23,22 @@ export function LazyImage({
   imageType = 'content',
   priority = false,
 }: LazyImageProps) {
-  const [isInView, setIsInView] = useState(false)
+  const [shouldLoad, setShouldLoad] = useState(priority)
   const imageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (priority) {
-      setIsInView(true)
-      return
-    }
+    if (priority) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true)
+          setShouldLoad(true)
           observer.disconnect()
         }
       },
       {
-        rootMargin: '50px 0px',
-        threshold: 0.01,
+        rootMargin: '200px 0px',
+        threshold: 0,
       },
     )
 
@@ -53,25 +50,28 @@ export function LazyImage({
   }, [priority])
 
   return (
-    <div ref={imageRef}>
-      {isInView ? (
-        <OptimizedImage
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          className={className}
-          imageType={imageType}
-          priority={priority}
-        />
-      ) : (
+    <span ref={imageRef} className="relative block">
+      <OptimizedImage
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        imageType={imageType}
+        priority={priority}
+        loading={shouldLoad ? 'eager' : 'lazy'}
+        style={{
+          opacity: shouldLoad ? 1 : 0,
+        }}
+      />
+      {!shouldLoad && (
         <span
-          className={`block animate-pulse bg-muted ${className}`}
+          className={`absolute inset-0 animate-pulse bg-muted ${className}`}
           style={{
             aspectRatio: `${width} / ${height}`,
           }}
         />
       )}
-    </div>
+    </span>
   )
 }
