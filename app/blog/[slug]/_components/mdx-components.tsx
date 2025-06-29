@@ -15,7 +15,7 @@ function MdxImage({
   const imageSrc = src.startsWith('/') ? src : `/${src}`
 
   return (
-    <div className="my-8 w-full">
+    <span className="my-8 block w-full">
       <LazyImage
         src={imageSrc}
         alt={alt || 'Blog image'}
@@ -25,7 +25,7 @@ function MdxImage({
         imageType="hero"
         priority={priority}
       />
-    </div>
+    </span>
   )
 }
 
@@ -43,8 +43,8 @@ function PortraitImage({
   const imageSrc = src.startsWith('/') ? src : `/${src}`
 
   return (
-    <div className="my-8 flex justify-center">
-      <div className="max-w-md">
+    <span className="my-8 flex justify-center">
+      <span className="block max-w-md">
         <LazyImage
           src={imageSrc}
           alt={alt || 'Blog image'}
@@ -54,8 +54,8 @@ function PortraitImage({
           imageType="content"
           priority={priority}
         />
-      </div>
-    </div>
+      </span>
+    </span>
   )
 }
 

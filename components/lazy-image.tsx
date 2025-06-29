@@ -42,7 +42,7 @@ export function LazyImage({
       {
         rootMargin: '50px 0px',
         threshold: 0.01,
-      }
+      },
     )
 
     if (imageRef.current) {
@@ -65,8 +65,8 @@ export function LazyImage({
           priority={priority}
         />
       ) : (
-        <div
-          className={`animate-pulse bg-muted ${className}`}
+        <span
+          className={`block animate-pulse bg-muted ${className}`}
           style={{
             aspectRatio: `${width} / ${height}`,
           }}
