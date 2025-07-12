@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
+import typography from "@tailwindcss/typography";
 
 export default {
     darkMode: ["class"],
@@ -57,14 +59,6 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
     },
-    hljs: {
-      theme: "github-dark",
-    },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography'),require("tailwind-highlightjs")],
-  safelist: [
-    {
-      pattern: /hljs+/,
-    },
-  ],
+  plugins: [tailwindcssAnimate, typography],
 } satisfies Config;

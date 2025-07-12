@@ -60,7 +60,13 @@ export default async function BlogPost({ params }: Props) {
           components={mdxComponents}
           options={{
             mdxOptions: {
-              rehypePlugins: [[rehypeHighlight]],
+              rehypePlugins: [
+                [rehypeHighlight, { 
+                  detect: true,
+                  ignoreMissing: true,
+                  subset: ['javascript', 'typescript', 'jsx', 'tsx', 'css', 'html', 'bash', 'json']
+                }]
+              ],
             },
           }}
         />
