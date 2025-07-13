@@ -14,6 +14,7 @@
         "storybook",
         "graphql",
         "nodejs",
+        "vitest",
         "go",
         "docker",
         "git"
