@@ -28,7 +28,7 @@ const projectData: Project[] = [
         icon: IconType.ExternalLink,
       },
       {
-        href: 'https://github.com/junukemori/goal-pilot',
+        href: 'https://github.com/jukemori/goal-pilot',
         label: 'GitHub',
         icon: IconType.GithubIcon,
       },
