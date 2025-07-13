@@ -61,21 +61,17 @@ export default function Home() {
             </svg>
           </a>
           <a
-            href="mailto:ukemori99@gmail.com"
+            href="https://bsky.app/profile/jukemori.bsky.social"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-muted transition-colors hover:opacity-70"
           >
             <svg
               className="h-5 w-5"
-              fill="none"
-              stroke="hsl(var(--primary))"
-              viewBox="0 0 24 24"
+              fill="hsl(var(--primary))"
+              viewBox="0 0 511.999 452.266"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
+              <path d="M110.985 30.442c58.695 44.217 121.837 133.856 145.013 181.961 23.176-48.105 86.322-137.744 145.016-181.961 42.361-31.897 110.985-56.584 110.985 21.96 0 15.681-8.962 131.776-14.223 150.628-18.272 65.516-84.873 82.228-144.112 72.116 103.55 17.68 129.889 76.238 73 134.8-108.04 111.223-155.288-27.905-167.385-63.554-3.489-10.262-2.991-10.498-6.561 0-12.098 35.649-59.342 174.777-167.382 63.554-56.89-58.562-30.551-117.12 72.999-134.8-59.239 10.112-125.84-6.6-144.112-72.116C8.962 184.178 0 68.083 0 52.402c0-78.544 68.633-53.857 110.985-21.96z" />
             </svg>
           </a>
         </div>
