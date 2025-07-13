@@ -14,7 +14,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
       alt={alt}
       width={IMAGE_DIMENSIONS.width}
       height={IMAGE_DIMENSIONS.height}
-      className="h-full w-full object-cover"
+      className="h-full w-full object-cover object-center"
       priority={priority}
       imageType="project"
     />

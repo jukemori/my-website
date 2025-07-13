@@ -50,7 +50,7 @@ export function LazyImage({
   }, [priority])
 
   return (
-    <span ref={imageRef} className="relative block">
+    <span ref={imageRef} className={`relative block h-full w-full`}>
       <OptimizedImage
         src={src}
         alt={alt}
