@@ -1,0 +1,168 @@
+---
+title: 'I Developed an App in a Week'
+date: '2025-07-13'
+slug: 'i-developed-an-app-in-a-week'
+image: '/images/blogs/2025/0713/main.webp'
+tags: ['Nextjs', 'Web Development']
+---
+
+# How App Development Has Changed: Building a Goal-Tracking App in Just One Week
+
+I want to write about the creation of this app, which only took one week to
+finish. It's my first app integration with the OpenAI API and also my first time
+using Supabase. Most importantly, it's my first time creating an app with Claude
+Code.
+
+What I want to highlight is how much app development has changed in this short
+period of time. Six months ago, I developed a calendar app with Next.js and
+Rails API. It was very difficult because Claude Code wasn't a thing before, and
+even though I used LLMs, I probably coded half of the code on my own.
+
+This time, I used Claude to set everything up from the beginning. However, LLMs
+are at a junior level - you need to give very specific instructions to make them
+work effectively. My first prompt to create this app was more than 100 lines of
+detailed instructions.
+
+## What the App Does
+
+The app is a goal-tracking system that helps users achieve their objectives
+through AI-powered planning and daily task management. Users input their goals,
+current skill level, and time availability, and the app generates a personalized
+roadmap with daily tasks.
+
+The core workflow is simple: define your goal, let AI create a structured plan,
+and track your progress through an interactive calendar. The app adapts to your
+schedule and provides intelligent recommendations to keep you on track.
+
+What makes it special is the AI integration - instead of generic task lists, it
+creates contextual, skill-level-appropriate tasks that consider your real-world
+constraints like time availability and current expertise.
+
+![App Screenshot](/images/blogs/2025/0713/sub1.webp)
+
+![App Screenshot 2](/images/blogs/2025/0713/sub2.webp)
+
+## Server Actions & Server Components: The Game Changers
+
+One of the most exciting parts of this project was finally getting to use
+Next.js 15's Server Actions and Server Components properly. I'd been curious
+about them for a while, but this was my first time diving deep, and honestly,
+they changed everything about how I build apps.
+
+The coolest thing about **Server Actions** is that I didn't need to create any
+API routes at all. Usually, I'd have to build separate endpoints for things like
+creating goals, marking tasks as complete, or generating AI roadmaps. This time,
+I just wrote server functions and called them directly from my components. No
+more switching between frontend and backend mindsets constantly.
+
+**Server Components** handled all the data fetching and initial rendering on the
+server. My dashboard, goal lists, and calendar views all render on the server
+with fresh data, then stream to the client. This means faster initial page loads
+and better SEO.
+
+**What I loved about this approach:**
+
+- **Faster Development**: No more switching between frontend and backend
+  contexts
+- **Better Performance**: Server-side rendering with streaming for instant page
+  loads
+- **Simplified Architecture**: Eliminated the need for a separate API layer
+  entirely
+- **Type Safety**: Direct function calls instead of HTTP requests means better
+  TypeScript integration
+- **Less Boilerplate**: No more API route files, request/response handling, or
+  client-side loading states for initial data
+
+This architecture choice was crucial for completing the app in just one week.
+The reduced complexity meant I could focus on features rather than
+infrastructure.
+
+## Tech Stack
+
+**Frontend & Framework**
+
+- Next.js 15 (App Router + React 19)
+- React Server Components (RSC)
+- Server Actions for forms
+- Turbopack (Rust-based bundler)
+
+**Backend & Database**
+
+- Supabase (PostgreSQL + Auth + Real-time)
+- Row Level Security (RLS)
+
+**Package Manager**
+
+- Bun (25x faster than npm)
+
+**UI & Styling**
+
+- Shadcn/ui v2 + Tailwind CSS v4
+- Radix UI primitives
+- Lucide React icons
+- Framer Motion v11
+
+**State & Data**
+
+- Jotai (Atomic state management)
+- TanStack Query v5 (Serverstate)
+- React Hook Form v7 + Zod v3
+
+**AI & External APIs**
+
+- OpenAI SDK v5 with streaming • Custom prompt engineering
+
+**Development Tools**
+
+- TypeScript 5.5+
+- Vitest (Testing)
+- ESLint + Prettier
+
+## My Experience and Learnings
+
+Some of the tech stack like Next.js, React, Jotai, React Hook Form, and Vitest I
+already use at my current work, but it was my first time using Supabase and
+React Query. I also instructed a specific file structure from the beginning.
+
+The thing is, I've been using Next.js for my work for more than 6 months, and I
+had already set up one project from scratch in my previous work. That knowledge
+definitely helped me build faster than before. I also really wanted to try React
+Query with Server Actions and server-side components, and I removed the API
+layer for this project, which made development even faster.
+
+However, sometimes the AI can't fix bugs, and it's faster to fix them by
+googling. AI coding assistance is powerful, but without the knowledge to use
+that power effectively, I don't think you can utilize it 100%.
+
+## The Real Challenge: From App to Business
+
+Initially, I thought I could make this app monetized, but halfway through
+development, I realized I couldn't really imagine people paying for this thing.
+So I gave up on the monetization idea and decided to just make this app as my
+portfolio piece.
+
+This taught me an important lesson: while it's gotten much faster to build apps
+from scratch than before, it's incredibly hard to come up with an idea that can
+actually work as a business. The technical barriers have lowered dramatically,
+but the business validation part - that's the harder challenge now.
+
+Building the app is no longer the bottleneck; finding a problem worth solving
+and that people will pay for is where the real difficulty lies. And since it's
+easier to build apps now, everyone will try to make their own startup, which
+means there will be more competitors than before. The market is becoming more
+saturated with apps, making it even harder to stand out.
+
+## Key Takeaways
+
+In this era, I feel like it's important to know about the tech stack you're
+using and use LLMs to handle the tedious tasks. But it's very important to know
+what the LLM is writing all the time, and you need to act like you're giving
+instructions to a junior developer.
+
+If you lose control and get lost in what the LLM is writing, it becomes much
+harder to debug. The key is maintaining oversight and understanding while
+leveraging AI to accelerate the development process.
+
+The speed of development has increased dramatically, but the need for
+foundational knowledge and careful guidance remains crucial for successful
+AI-assisted development.
