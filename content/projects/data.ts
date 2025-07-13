@@ -1,7 +1,39 @@
 import { Project, IconType } from '@/app/projects/_lib/types'
 import mingleTimeImage from '@/public/images/projects/mingletime/main.webp'
+import goalPilotImage from '@/public/images/projects/goal-pilot/main.webp'
 
 const projectData: Project[] = [
+  {
+    title: 'Goal Pilot',
+    description:
+      'Goal Pilot is an AI-powered goal management app that transforms long-term goals into daily actionable tasks with intelligent roadmap generation and progress tracking.',
+    image: {
+      src: goalPilotImage,
+      alt: 'Goal Pilot dashboard showing goal overview and progress tracking',
+    },
+    techStack: [
+      'nextjs',
+      'react',
+      'typescript',
+      'tailwindcss',
+      'supabase',
+      'postgresql',
+      'openai',
+      'vitest',
+    ],
+    links: [
+      {
+        href: 'https://goal-pilot-ai.vercel.app/',
+        label: 'Demo',
+        icon: IconType.ExternalLink,
+      },
+      {
+        href: 'https://github.com/junukemori/goal-pilot',
+        label: 'GitHub',
+        icon: IconType.GithubIcon,
+      },
+    ],
+  },
   {
     title: 'MingleTime',
     description:
