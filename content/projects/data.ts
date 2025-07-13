@@ -28,6 +28,11 @@ const projectData: Project[] = [
         icon: IconType.ExternalLink,
       },
       {
+        href: '/blog/i-developed-an-app-in-a-week',
+        label: 'Blog',
+        icon: IconType.BookOpen,
+      },
+      {
         href: 'https://github.com/jukemori/goal-pilot',
         label: 'GitHub',
         icon: IconType.GithubIcon,
