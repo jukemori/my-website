@@ -35,7 +35,7 @@ export default function Home() {
             </svg>
           </a>
           <a
-            href="https://github.com/ukemori"
+            href="https://github.com/jukemori"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -48,7 +48,7 @@ export default function Home() {
             </svg>
           </a>
           <a
-            href="https://www.linkedin.com/in/jun-ukemori-a6b32b163/"
+            href="https://www.linkedin.com/in/jun-ukemori/"
             target="_blank"
             rel="noopener noreferrer"
           >
