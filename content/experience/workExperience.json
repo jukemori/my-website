@@ -5,7 +5,7 @@
       "position": "Software Engineer",
       "period": "January 2025 - Present",
       "location": "Kanagawa, Japan",
-      "description": "Contributed to the renewal development of a logistics SaaS platform, focusing on user interface design and implementation using React (Next.js) and TypeScript. Created comprehensive unit tests with Vitest to ensure code quality. Collaborated closely with product managers to define detailed feature specifications and documentation. Implemented E2E testing environments using Playwright, improving quality assurance. Developed and maintained a reusable UI component library using Storybook for component-driven development (CDD), improving team productivity and UI consistency. Utilized GraphQL + urql for efficient data fetching and caching.",
+      "description": "Contributed to the renewal development of a logistics SaaS platform, focusing on user interface design and implementation using React (Next.js) and TypeScript. Created comprehensive unit tests with Vitest to ensure code quality. Collaborated closely with product managers to define detailed feature specifications and documentation. Implemented E2E testing environments using Playwright, improving quality assurance. Developed and maintained a reusable UI component using Storybook, improving team productivity and UI consistency. Utilized GraphQL + urql for efficient data fetching and caching.",
       "technologies": [
         "nextjs",
         "react",
