@@ -8,14 +8,9 @@ exact = false
 # Install peer dependencies automatically
 peer = true
 
-# Optional: Configure package manager behavior
-[install.cache]
-# Use a global cache for faster installs
-dir = "~/.bun/install/cache"
-
 [install.lockfile]
 # Save lockfile after install
 save = true
 
 # Print the lockfile to stdout
-print = false
+# print = false
