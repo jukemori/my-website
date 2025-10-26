@@ -10,6 +10,18 @@ export const BLUR_DATA_URL =
   'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjMiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InRyYW5zcGFyZW50Ii8+PC9zdmc+'
 
 /**
+ * Image dimensions for different image types
+ * Used by OptimizedImage and other image components
+ */
+export const IMAGE_DIMENSIONS = {
+  blogThumbnail: { width: 700, height: 400 },
+  project: { width: 590, height: 350 },
+  hero: { width: 900, height: 500 },
+  profile: { width: 288, height: 288 },
+  content: { width: 590, height: 350 },
+} as const
+
+/**
  * Common responsive sizes for different image types
  * Optimized for performance with more granular breakpoints
  */
@@ -32,3 +44,12 @@ export const IMAGE_SIZES = {
   content:
     '(max-width: 640px) 350px, (max-width: 768px) 350px, (max-width: 1024px) 590px, 590px',
 } as const
+
+export type ImageType = keyof typeof IMAGE_SIZES
+
+/**
+ * Helper to get dimensions for an image type
+ */
+export function getImageDimensions(type: ImageType) {
+  return IMAGE_DIMENSIONS[type]
+}

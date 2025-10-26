@@ -1,11 +1,11 @@
 'use client'
 
 import Image, { ImageProps } from 'next/image'
-import { IMAGE_SIZES, BLUR_DATA_URL } from '@/lib/image-utils'
+import { IMAGE_SIZES, BLUR_DATA_URL, type ImageType } from '@/lib/image-utils'
 
 interface OptimizedImageProps
   extends Omit<ImageProps, 'placeholder' | 'blurDataURL' | 'sizes'> {
-  imageType?: keyof typeof IMAGE_SIZES
+  imageType?: ImageType
   loading?: 'lazy' | 'eager'
   style?: React.CSSProperties
 }

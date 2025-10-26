@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { OptimizedImage } from './optimized-image'
 import { StaticImageData } from 'next/image'
+import type { ImageType } from '@/lib/image-utils'
 
 interface LazyImageProps {
   src: string | StaticImageData
@@ -10,7 +11,7 @@ interface LazyImageProps {
   width: number
   height: number
   className?: string
-  imageType?: 'blogThumbnail' | 'project' | 'hero' | 'profile' | 'content'
+  imageType?: ImageType
   priority?: boolean
 }
 
