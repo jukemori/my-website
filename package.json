@@ -2,10 +2,11 @@
   "name": "my-website",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.19.0",
   "scripts": {
-    "dev": "bun --bun next dev",
-    "build": "bun --bun next build",
-    "start": "bun --bun next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
