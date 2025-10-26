@@ -69,18 +69,6 @@ function ThemeToggle() {
 
 export function Navbar() {
   useEffect(() => {
-    const header = document.querySelector('.header')
-    if (!header || window.innerWidth <= 768) return
-
-    const handleScroll = () => {
-      header.classList.toggle('shadow-md', window.scrollY >= 80)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
     if (window.innerWidth > 768) return
 
     let bgExtension = document.getElementById('mobile-nav-bg-extension')
@@ -122,7 +110,7 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="header fixed left-0 top-0 z-[100] w-full bg-background md:bg-background/90 md:backdrop-blur-sm">
+    <header className="header fixed left-0 top-0 z-[100] w-full bg-background shadow-sm md:bg-background/90 md:backdrop-blur-sm">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
         <Link href="/" className="relative h-[30px] w-[30px]">
           <svg
