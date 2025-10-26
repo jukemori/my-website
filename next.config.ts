@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig= {
+  reactCompiler: true,
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [320, 480, 640, 750, 828, 1080, 1200, 1920],
@@ -51,4 +52,4 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+export default nextConfig 
