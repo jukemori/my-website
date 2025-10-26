@@ -1,65 +1,8 @@
-import { LazyImage } from '@/components/lazy-image'
 import { ReactNode } from 'react'
+import { MdxImage } from './mdx-image'
+import { PortraitImage } from './mdx-portrait-image'
 
-// Custom Image component for MDX content
-function MdxImage({
-  src,
-  alt,
-  priority,
-}: {
-  src: string
-  alt?: string
-  priority?: boolean
-}) {
-  // Handle relative image paths
-  const imageSrc = src.startsWith('/') ? src : `/${src}`
-
-  return (
-    <span className="my-8 block w-full">
-      <LazyImage
-        src={imageSrc}
-        alt={alt || 'Blog image'}
-        width={700}
-        height={400}
-        className="h-auto w-full rounded-lg shadow-md"
-        imageType="hero"
-        priority={priority}
-      />
-    </span>
-  )
-}
-
-// Custom Portrait Image component for images where height > width
-function PortraitImage({
-  src,
-  alt,
-  priority,
-}: {
-  src: string
-  alt?: string
-  priority?: boolean
-}) {
-  // Handle relative image paths
-  const imageSrc = src.startsWith('/') ? src : `/${src}`
-
-  return (
-    <span className="my-8 flex justify-center">
-      <span className="block max-w-md">
-        <LazyImage
-          src={imageSrc}
-          alt={alt || 'Blog image'}
-          width={400}
-          height={600}
-          className="h-auto w-full rounded-lg shadow-md"
-          imageType="content"
-          priority={priority}
-        />
-      </span>
-    </span>
-  )
-}
-
-// Custom components for other MDX elements
+// Custom components for MDX elements
 function MdxHeading2({ children }: { children: ReactNode }) {
   return <h2 className="mb-4 mt-8 text-2xl font-bold">{children}</h2>
 }

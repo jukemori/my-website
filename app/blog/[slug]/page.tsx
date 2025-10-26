@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 import { OptimizedImage } from '@/components/optimized-image'
 import { formatDate } from '@/lib/blog'
-import { mdxComponents } from './_components/mdx-components'
+import { mdxComponents } from '@/components/mdx'
 import rehypeHighlight from 'rehype-highlight'
 import { TagList } from '@/components/tag-list'
 
