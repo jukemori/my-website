@@ -5,6 +5,7 @@ import { OptimizedImage } from '@/components/optimized-image'
 import { formatDate } from '@/lib/blog'
 import { mdxComponents } from './_components/mdx-components'
 import rehypeHighlight from 'rehype-highlight'
+import { TagList } from '@/components/tag-list'
 
 type Props = {
   params: Promise<{
@@ -30,15 +31,7 @@ export default async function BlogPost({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-3xl pb-24 md:pb-10">
-      {post.tags && post.tags.length > 0 && (
-        <div className="mb-4 flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
-            <span key={tag} className="text-lg text-muted">
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+      <TagList tags={post.tags} className="mb-4" tagClassName="text-lg" />
       <h1 className="mb-4 text-3xl font-bold md:text-4xl">{post.title}</h1>
       <time className="mb-10 block text-sm text-muted">
         {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
