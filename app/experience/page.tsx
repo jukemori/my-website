@@ -3,21 +3,23 @@ import educationData from '@/content/experience/education.json'
 import skillsData from '@/content/experience/skills.json'
 import { ExperienceCard } from '@/app/experience/_components/experience-card'
 import { EducationCard } from '@/app/experience/_components/education-card'
+import { PageContainer } from '@/components/page-container'
+import { PageHeader } from '@/components/page-header'
 
 export const revalidate = 86400 // 24 hours
 
 export default function ExperiencePage() {
   return (
-    <div className="pb-24 md:pb-10">
+    <PageContainer>
       <section className="mb-16">
-        <h1 className="mb-8 text-3xl font-bold md:text-4xl">Work Experience</h1>
+        <PageHeader>Work Experience</PageHeader>
         {workExperiencesData.experiences.map((exp) => (
           <ExperienceCard key={exp.company} {...exp} />
         ))}
       </section>
 
       <section className="mb-16">
-        <h1 className="mb-8 text-3xl font-bold md:text-4xl">Education</h1>
+        <PageHeader>Education</PageHeader>
         {educationData.education.map((edu) => (
           <EducationCard key={edu.school} {...edu} />
         ))}
@@ -25,7 +27,7 @@ export default function ExperiencePage() {
 
       <section className="grid gap-8 md:grid-cols-2">
         <div>
-          <h2 className="mb-8 text-3xl font-bold md:text-4xl">Top Skills</h2>
+          <PageHeader>Top Skills</PageHeader>
           <ul className="ml-6 list-disc text-muted">
             {skillsData.topSkills.map((skill) => (
               <li key={skill}>{skill}</li>
@@ -34,7 +36,7 @@ export default function ExperiencePage() {
         </div>
 
         <div>
-          <h2 className="mb-8 text-3xl font-bold md:text-4xl">Languages</h2>
+          <PageHeader>Languages</PageHeader>
           <ul className="ml-6 list-disc text-muted">
             {skillsData.languages.map(({ language, level }) => (
               <li key={language}>
@@ -44,6 +46,6 @@ export default function ExperiencePage() {
           </ul>
         </div>
       </section>
-    </div>
+    </PageContainer>
   )
 }

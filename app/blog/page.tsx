@@ -3,6 +3,9 @@ import { BlogImage } from './_components/blog-image'
 import Link from 'next/link'
 import { formatDate } from '@/lib/blog'
 import { PRIORITY_IMAGE_COUNT } from '@/lib/constants'
+import { TagList } from '@/components/tag-list'
+import { PageContainer } from '@/components/page-container'
+import { PageHeader } from '@/components/page-header'
 
 export const revalidate = 3600 // 1 hour
 
@@ -10,8 +13,8 @@ export default async function BlogPage() {
   const posts = getBlogPosts()
 
   return (
-    <div className="pb-24 md:pb-10">
-      <h1 className="mb-8 text-3xl font-bold md:text-4xl">Blog Posts</h1>
+    <PageContainer>
+      <PageHeader>Blog Posts</PageHeader>
       <ul className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-2 md:place-items-start">
         {posts.map((post, index) => (
           <li
@@ -30,15 +33,7 @@ export default async function BlogPage() {
                 />
               )}
               <div className="p-4">
-                {post.tags && post.tags.length > 0 && (
-                  <div className="mb-3 flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
-                      <span key={tag} className="text-sm text-muted">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                <TagList tags={post.tags} className="mb-3" />
                 <h3 className="mb-2 text-xl font-semibold">{post.title}</h3>
                 <time className="text-sm text-muted">
                   {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
@@ -48,6 +43,6 @@ export default async function BlogPage() {
           </li>
         ))}
       </ul>
-    </div>
+    </PageContainer>
   )
 }
