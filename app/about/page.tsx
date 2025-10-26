@@ -1,15 +1,17 @@
-import { OptimizedImage } from '@/components/optimized-image'
 import footballImage from '@/public/images/about/about-football.webp'
 import mexicoImage from '@/public/images/about/about-mexico.webp'
 import boxingImage from '@/public/images/about/about-boxing.webp'
+import { PageContainer } from '@/components/page-container'
+import { ContentImage } from '@/components/content-image'
+import { PageHeader } from '@/components/page-header'
 
 export default function AboutPage() {
   return (
-    <div className="pb-24 md:pb-10">
-      <h1 className="mb-8 text-3xl font-bold md:text-4xl">About Me</h1>
+    <PageContainer>
+      <PageHeader>About Me</PageHeader>
 
       <section className="mb-8">
-        <h2 className="mb-5 text-xl font-semibold">Background</h2>
+        <PageHeader as="h2">Background</PageHeader>
         <p className="mb-5 leading-relaxed text-muted">
           I grew up in Tokyo with a deep fascination for American movies and TV
           shows, which inspired a dream to explore the United States. At 15, I
@@ -23,17 +25,11 @@ export default function AboutPage() {
           playing collegiate football, I explored various career paths but
           struggled to find a clear direction.
         </p>
-        <div className="mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]">
-          <OptimizedImage
-            width={590}
-            height={350}
-            src={footballImage}
-            alt="about image"
-            className="h-full w-full object-cover"
-            priority
-            imageType="content"
-          />
-        </div>
+        <ContentImage
+          src={footballImage}
+          alt="Jun Ukemori playing collegiate football"
+          priority
+        />
         <p className="mb-5 leading-relaxed text-muted">
           In 2019, I unexpectedly developed a passion for learning Spanish.
           Despite struggling with the language in high school and college, I
@@ -49,20 +45,11 @@ export default function AboutPage() {
           my journey as a frontend developer in Tokyo.
         </p>
 
-        <div className="mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]">
-          <OptimizedImage
-            width={590}
-            height={350}
-            src={mexicoImage}
-            alt="about image"
-            className="h-full w-full object-cover"
-            imageType="content"
-          />
-        </div>
+        <ContentImage src={mexicoImage} alt="Jun Ukemori in Mexico City" />
       </section>
 
       <section className="mb-8">
-        <h2 className="mb-5 text-xl font-semibold">Path to Programming</h2>
+        <PageHeader as="h2">Path to Programming</PageHeader>
         <p className="mb-5 leading-relaxed text-muted">
           My transition into programming wasn&apos;t a straight path. Working in
           corporate roles made me reflect on the significance of meaningful
@@ -88,20 +75,14 @@ export default function AboutPage() {
           experiences. My role enables me to apply my technical expertise while
           continuously growing and tackling new challenges.
         </p>
-        <div className="mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]">
-          <OptimizedImage
-            width={590}
-            height={350}
-            src={boxingImage}
-            alt="about image"
-            className="h-full w-full object-cover"
-            imageType="content"
-          />
-        </div>
+        <ContentImage
+          src={boxingImage}
+          alt="Jun Ukemori training in boxing gym"
+        />
       </section>
 
       <section className="mb-8">
-        <h2 className="mb-5 text-xl font-semibold">Interests</h2>
+        <PageHeader as="h2">Interests</PageHeader>
         <p className="mb-5 leading-relaxed text-muted">
           Beyond programming, I&apos;m passionate about exploring different
           cultures and languages. My experiences living in multiple countries
@@ -115,6 +96,6 @@ export default function AboutPage() {
           provides fresh inspiration for my work.
         </p>
       </section>
-    </div>
+    </PageContainer>
   )
 }
