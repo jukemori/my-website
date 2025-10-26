@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import { ExternalLink, BookOpen } from 'lucide-react'
 import { GithubIcon } from '@/components/icons/github-icon'
@@ -22,7 +21,7 @@ export const ProjectLink: React.FC<ProjectLinkProps> = ({
       target="_blank"
       className="flex items-center gap-1 text-muted transition-colors duration-300 hover:text-primary"
     >
-      <IconComponent size={14} />
+      <IconComponent className="h-3.5 w-3.5" />
       {label}
     </Link>
   )

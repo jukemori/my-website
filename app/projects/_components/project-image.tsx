@@ -1,4 +1,3 @@
-import React from 'react'
 import { ProjectImageProps } from '../_lib/types'
 import { IMAGE_DIMENSIONS } from '../_lib/constants'
 import { LazyImage } from '@/components/lazy-image'
