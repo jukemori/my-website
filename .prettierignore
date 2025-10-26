@@ -7,6 +7,7 @@ dist/
 out/
 public/
 package-lock.json
+pnpm-lock.yaml
 package.json
 next.config.mjs
 tailwind.config.ts
