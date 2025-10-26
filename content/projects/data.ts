@@ -2,7 +2,7 @@ import { Project, IconType } from '@/app/projects/_lib/types'
 import mingleTimeImage from '@/public/images/projects/mingletime/main.webp'
 import goalPilotImage from '@/public/images/projects/goal-pilot/main.webp'
 
-const projectData: Project[] = [
+const projectData = [
   {
     title: 'Goal Pilot',
     description:
@@ -80,6 +80,6 @@ const projectData: Project[] = [
       },
     ],
   },
-]
+] satisfies Project[]
 
 export default projectData
