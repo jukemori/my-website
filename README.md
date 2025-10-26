@@ -6,8 +6,8 @@ Next.js website built with MDX support, Tailwind CSS, and theme switching capabi
 
 ## Tech Stack
 
-- [Next.js 16](https://nextjs.org)
-- [Bun](https://bun.sh) - Fast JavaScript runtime and package manager
+- [Next.js 16](https://nextjs.org) with React Compiler
+- [pnpm](https://pnpm.io) - Fast, disk space efficient package manager
 - [MDX](https://mdxjs.com/) for content management
 - [Tailwind CSS](https://tailwindcss.com/) with Typography plugin
 - [shadcn/ui](https://ui.shadcn.com/) for loading skeletons and dark/light mode
@@ -16,22 +16,22 @@ Next.js website built with MDX support, Tailwind CSS, and theme switching capabi
 
 ## Getting Started
 
-First, make sure you have [Bun](https://bun.sh) installed:
+First, make sure you have [pnpm](https://pnpm.io) installed:
 
 ```bash
-curl -fsSL https://bun.sh/install | bash
+npm install -g pnpm
 ```
 
 Then, install the dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 
 Run the development server:
 
 ```bash
-bun dev
+pnpm dev
 ```
 
 The site will be available at [http://localhost:3000](http://localhost:3000).
@@ -47,7 +47,8 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 ## Features
 
 - ⚡️ Next.js 16 with Turbopack for fast builds
-- 🚀 Bun for blazing fast package management and runtime
+- 🔥 React Compiler for automatic memoization and optimization
+- 📦 pnpm for efficient package management
 - 📝 MDX support for blog contents
 - 🎨 Tailwind CSS with Typography plugin
 - 🌓 Dark/light mode support
@@ -59,17 +60,20 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 
 ```bash
 # Lint the codebase
-bun lint
+pnpm lint
+
+# Format code with Prettier
+pnpm format
 
 # Build for production
-bun build
+pnpm build
 
 # Start production server
-bun start
+pnpm start
 
 # Add a new package
-bun add <package-name>
+pnpm add <package-name>
 
 # Remove a package
-bun remove <package-name>
+pnpm remove <package-name>
 ```
