@@ -1,4 +1,4 @@
-import { LazyImage } from '@/components/lazy-image'
+import { OptimizedImage } from '@/components/optimized-image'
 
 export function BlogImage({
   src,
@@ -11,7 +11,7 @@ export function BlogImage({
 }) {
   return (
     <div className="relative h-48 w-full overflow-hidden rounded-t-lg md:h-60">
-      <LazyImage
+      <OptimizedImage
         src={src}
         alt={alt}
         className="h-full w-full object-cover"

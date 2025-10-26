@@ -1,6 +1,6 @@
 import { ProjectImageProps } from '../_lib/types'
 import { getImageDimensions } from '@/lib/image-utils'
-import { LazyImage } from '@/components/lazy-image'
+import { OptimizedImage } from '@/components/optimized-image'
 
 export const ProjectImage: React.FC<ProjectImageProps> = ({
   src,
@@ -11,7 +11,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
 
   return (
     <div className="aspect-[59/35] w-full overflow-hidden rounded-lg shadow-md">
-      <LazyImage
+      <OptimizedImage
         src={src}
         alt={alt}
         width={width}

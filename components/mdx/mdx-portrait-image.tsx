@@ -1,4 +1,4 @@
-import { LazyImage } from '@/components/lazy-image'
+import { OptimizedImage } from '@/components/optimized-image'
 
 interface PortraitImageProps {
   src: string
@@ -13,7 +13,7 @@ export function PortraitImage({ src, alt, priority }: PortraitImageProps) {
   return (
     <span className="my-8 flex justify-center">
       <span className="block max-w-md">
-        <LazyImage
+        <OptimizedImage
           src={imageSrc}
           alt={alt || 'Blog image'}
           width={400}

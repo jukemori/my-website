@@ -1,4 +1,4 @@
-import { LazyImage } from '@/components/lazy-image'
+import { OptimizedImage } from '@/components/optimized-image'
 
 interface MdxImageProps {
   src: string
@@ -12,7 +12,7 @@ export function MdxImage({ src, alt, priority }: MdxImageProps) {
 
   return (
     <span className="my-8 block w-full">
-      <LazyImage
+      <OptimizedImage
         src={imageSrc}
         alt={alt || 'Blog image'}
         width={700}
