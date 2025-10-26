@@ -4,6 +4,8 @@ import skillsData from '@/content/experience/skills.json'
 import { ExperienceCard } from '@/app/experience/_components/experience-card'
 import { EducationCard } from '@/app/experience/_components/education-card'
 
+export const revalidate = 86400 // 24 hours
+
 export default function ExperiencePage() {
   return (
     <div className="pb-24 md:pb-10">

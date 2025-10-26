@@ -2,8 +2,9 @@ import { getBlogPosts } from '@/lib/blog'
 import { BlogImage } from './_components/blog-image'
 import Link from 'next/link'
 import { formatDate } from '@/lib/blog'
+import { PRIORITY_IMAGE_COUNT } from '@/lib/constants'
 
-export const revalidate = 3600
+export const revalidate = 3600 // 1 hour
 
 export default async function BlogPage() {
   const posts = getBlogPosts()
@@ -25,7 +26,7 @@ export default async function BlogPage() {
                 <BlogImage
                   src={post.image}
                   alt={post.title}
-                  priority={index < 2}
+                  priority={index < PRIORITY_IMAGE_COUNT}
                 />
               )}
               <div className="p-4">
