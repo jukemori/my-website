@@ -6,7 +6,8 @@ Next.js website built with MDX support, Tailwind CSS, and theme switching capabi
 
 ## Tech Stack
 
-- [Next.js 15](https://nextjs.org)
+- [Next.js 16](https://nextjs.org)
+- [Bun](https://bun.sh) - Fast JavaScript runtime and package manager
 - [MDX](https://mdxjs.com/) for content management
 - [Tailwind CSS](https://tailwindcss.com/) with Typography plugin
 - [shadcn/ui](https://ui.shadcn.com/) for loading skeletons and dark/light mode
@@ -15,24 +16,22 @@ Next.js website built with MDX support, Tailwind CSS, and theme switching capabi
 
 ## Getting Started
 
-First, install the dependencies:
+First, make sure you have [Bun](https://bun.sh) installed:
 
 ```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
+curl -fsSL https://bun.sh/install | bash
 ```
 
-Then, run the development server:
+Then, install the dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+bun install
+```
+
+Run the development server:
+
+```bash
+bun dev
 ```
 
 The site will be available at [http://localhost:3000](http://localhost:3000).
@@ -47,7 +46,8 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 
 ## Features
 
-- ⚡️ Next.js 15 with Turbopack for fast builds
+- ⚡️ Next.js 16 with Turbopack for fast builds
+- 🚀 Bun for blazing fast package management and runtime
 - 📝 MDX support for blog contents
 - 🎨 Tailwind CSS with Typography plugin
 - 🌓 Dark/light mode support
@@ -59,11 +59,17 @@ The site will be available at [http://localhost:3000](http://localhost:3000).
 
 ```bash
 # Lint the codebase
-npm run lint
+bun lint
 
 # Build for production
-npm run build
+bun build
 
 # Start production server
-npm run start
+bun start
+
+# Add a new package
+bun add <package-name>
+
+# Remove a package
+bun remove <package-name>
 ```
