@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
 import { WebVitals } from '@/components/web-vitals'
+import { SkipLink } from '@/components/skip-link'
 import './globals.css'
 
 const poppins = Poppins({
@@ -66,6 +67,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
       </head>
       <body className={`${poppins.variable} antialiased`}>
+        <SkipLink />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -74,7 +76,9 @@ export default function RootLayout({
         >
           <Navbar />
           <div className="min-h-screen p-8">
-            <main className="mx-auto max-w-4xl pt-16">{children}</main>
+            <main id="main-content" className="mx-auto max-w-4xl pt-16">
+              {children}
+            </main>
           </div>
         </ThemeProvider>
         <WebVitals />
