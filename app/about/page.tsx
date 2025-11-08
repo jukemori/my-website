@@ -5,6 +5,26 @@ import { PageContainer } from '@/components/page-container'
 import { ContentImage } from '@/components/content-image'
 import { PageHeader } from '@/components/page-header'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About | Jun Ukemori',
+  description:
+    'Learn more about Jun Ukemori - Software Engineer, former collegiate football player, and tech enthusiast based in Tokyo, Japan.',
+  openGraph: {
+    title: 'About | Jun Ukemori',
+    description:
+      'Learn more about Jun Ukemori - Software Engineer and tech enthusiast based in Tokyo.',
+    url: 'https://www.jun-ukemori.com/about',
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About | Jun Ukemori',
+    description: 'Software Engineer and tech enthusiast based in Tokyo, Japan.',
+  },
+}
+
 export default function AboutPage() {
   return (
     <PageContainer>

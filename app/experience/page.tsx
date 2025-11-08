@@ -8,6 +8,26 @@ import { PageHeader } from '@/components/page-header'
 
 export const revalidate = 86400 // 24 hours
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Experience | Jun Ukemori',
+  description:
+    'My professional work experience as a Software Engineer specializing in Next.js, React, TypeScript, and Ruby on Rails.',
+  openGraph: {
+    title: 'Experience | Jun Ukemori',
+    description:
+      'My professional work experience and technical skills as a Software Engineer.',
+    url: 'https://www.jun-ukemori.com/experience',
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Experience | Jun Ukemori',
+    description: 'My professional work experience and technical skills.',
+  },
+}
+
 export default function ExperiencePage() {
   return (
     <PageContainer>

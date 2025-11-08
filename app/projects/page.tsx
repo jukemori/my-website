@@ -5,6 +5,27 @@ import { PageHeader } from '@/components/page-header'
 
 export const revalidate = 3600 // 1 hour
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Projects | Jun Ukemori',
+  description:
+    'Explore my portfolio of web development projects built with Next.js, React, TypeScript, and Ruby on Rails.',
+  openGraph: {
+    title: 'Projects | Jun Ukemori',
+    description:
+      'Explore my portfolio of web development projects built with Next.js, React, TypeScript, and Ruby on Rails.',
+    url: 'https://www.jun-ukemori.com/projects',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects | Jun Ukemori',
+    description:
+      'Explore my portfolio of web development projects built with Next.js and React.',
+  },
+}
+
 export default function ProjectsPage() {
   return (
     <PageContainer>
