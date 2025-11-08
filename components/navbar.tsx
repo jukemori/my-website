@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import Link from 'next/link'
 import {
   BookOpen,
@@ -68,47 +67,6 @@ function ThemeToggle() {
 }
 
 export function Navbar() {
-  useEffect(() => {
-    if (window.innerWidth > 768) return
-
-    let bgExtension = document.getElementById('mobile-nav-bg-extension')
-    if (!bgExtension) {
-      bgExtension = document.createElement('div')
-      bgExtension.id = 'mobile-nav-bg-extension'
-      bgExtension.style.position = 'fixed'
-      bgExtension.style.bottom = '0'
-      bgExtension.style.left = '0'
-      bgExtension.style.width = '100%'
-      bgExtension.style.zIndex = '99'
-      bgExtension.style.height = '70px'
-      bgExtension.style.backgroundColor = 'hsl(var(--background))'
-      bgExtension.style.transform = 'translateY(100%)'
-      document.body.appendChild(bgExtension)
-    }
-
-    const updateExtensionVisibility = () => {
-      if (!bgExtension) return
-      const viewportHeight = window.innerHeight
-      const documentHeight = document.documentElement.scrollHeight
-      const scrollPosition = window.scrollY
-
-      if (scrollPosition + viewportHeight >= documentHeight - 100) {
-        bgExtension.style.transform = 'translateY(0)'
-      } else {
-        bgExtension.style.transform = 'translateY(100%)'
-      }
-    }
-
-    window.addEventListener('scroll', updateExtensionVisibility)
-    window.addEventListener('resize', updateExtensionVisibility)
-
-    return () => {
-      window.removeEventListener('scroll', updateExtensionVisibility)
-      window.removeEventListener('resize', updateExtensionVisibility)
-      bgExtension?.remove()
-    }
-  }, [])
-
   return (
     <header className="header fixed left-0 top-0 z-[100] w-full bg-background shadow-sm md:bg-background/90 md:backdrop-blur-sm">
       <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
