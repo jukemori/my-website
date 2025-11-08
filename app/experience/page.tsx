@@ -1,6 +1,6 @@
-import workExperiencesData from '@/content/experience/workExperience.json'
-import educationData from '@/content/experience/education.json'
-import skillsData from '@/content/experience/skills.json'
+import { experiences } from '@/content/experience/workExperience'
+import { education } from '@/content/experience/education'
+import { skills } from '@/content/experience/skills'
 import { ExperienceCard } from '@/app/experience/_components/experience-card'
 import { EducationCard } from '@/app/experience/_components/education-card'
 import { PageContainer } from '@/components/page-container'
@@ -33,14 +33,14 @@ export default function ExperiencePage() {
     <PageContainer>
       <section className="mb-16">
         <PageHeader>Work Experience</PageHeader>
-        {workExperiencesData.experiences.map((exp) => (
+        {experiences.map((exp) => (
           <ExperienceCard key={exp.company} {...exp} />
         ))}
       </section>
 
       <section className="mb-16">
         <PageHeader>Education</PageHeader>
-        {educationData.education.map((edu) => (
+        {education.map((edu) => (
           <EducationCard key={edu.school} {...edu} />
         ))}
       </section>
@@ -49,7 +49,7 @@ export default function ExperiencePage() {
         <div>
           <PageHeader>Top Skills</PageHeader>
           <ul className="ml-6 list-disc text-muted">
-            {skillsData.topSkills.map((skill) => (
+            {skills.topSkills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>
@@ -58,7 +58,7 @@ export default function ExperiencePage() {
         <div>
           <PageHeader>Languages</PageHeader>
           <ul className="ml-6 list-disc text-muted">
-            {skillsData.languages.map(({ language, level }) => (
+            {skills.languages.map(({ language, level }) => (
               <li key={language}>
                 {language} ({level})
               </li>

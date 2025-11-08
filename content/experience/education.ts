@@ -1,0 +1,49 @@
+export interface Education {
+  school: string;
+  period: string;
+  location: string;
+  degree: string;
+  technologies?: string[];
+  projectDemo?: string;
+  activities?: string;
+}
+
+export const education: Education[] = [
+  {
+    school: "Le Wagon",
+    period: "April 2023 - June 2023",
+    location: "Tokyo, Japan",
+    degree: "Full-Stack Web Development, Computer Programming",
+    technologies: [
+      "rails",
+      "ruby",
+      "javascript",
+      "postgresql",
+      "html5",
+      "css3",
+      "git",
+      "github",
+    ],
+    projectDemo: "https://www.youtube.com/embed/OQUNoIuV5z8",
+  },
+  {
+    school: "SUNY Canton",
+    period: "August 2018 - June 2019",
+    location: "Canton, NY, USA",
+    degree: "Sport and Fitness Administration/Management",
+    activities: "NCAA Division III Men's Soccer",
+  },
+  {
+    school: "Northwest College",
+    period: "August 2016 - June 2018",
+    location: "Powell, WY, USA",
+    degree: "Liberal Arts and Sciences",
+    activities: "NJCAA Men's Soccer",
+  },
+  {
+    school: "De Anza College",
+    period: "August 2015 - June 2016",
+    location: "Cupertino, CA, USA",
+    degree: "Film/Cinema/Video Studies",
+  },
+];
