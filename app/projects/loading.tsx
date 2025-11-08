@@ -8,7 +8,7 @@ export default function WorksPageLoading() {
       <div className="space-y-8">
         {[1, 2, 3].map((index) => (
           <div key={index} className="grid gap-8 md:grid-cols-2">
-            <Skeleton className="aspect-[590/350] w-full rounded-lg" />
+            <Skeleton className="aspect-590/350 w-full rounded-lg" />
 
             <div className="flex flex-col space-y-6">
               <div>

@@ -10,7 +10,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
   const { width, height } = getImageDimensions('project')
 
   return (
-    <div className="aspect-[59/35] w-full overflow-hidden rounded-lg shadow-md">
+    <div className="aspect-59/35 w-full overflow-hidden rounded-lg shadow-md">
       <OptimizedImage
         src={src}
         alt={alt}

@@ -17,7 +17,7 @@ interface BlogPostCardProps {
 
 export function BlogPostCard({ post, priority = false }: BlogPostCardProps) {
   return (
-    <li className="w-full max-w-96 rounded-lg border border-border shadow md:max-w-full">
+    <li className="w-full max-w-96 rounded-lg border border-border shadow-sm md:max-w-full">
       <Link
         href={`/blog/${post.slug}`}
         className="group block transition-opacity hover:opacity-90"

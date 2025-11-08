@@ -18,7 +18,7 @@ export function ContentImage({
   return (
     <div
       className={cn(
-        'mx-auto my-12 aspect-[59/35] w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]',
+        'mx-auto my-12 aspect-59/35 w-full max-w-[350px] overflow-hidden rounded-lg shadow-lg md:max-w-[590px]',
         className,
       )}
     >
