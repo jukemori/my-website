@@ -1,70 +1,26 @@
-'use client'
-
 import Link from 'next/link'
 import {
   BookOpen,
   BriefcaseBusiness,
   FolderKanban,
   Home,
-  Moon,
-  Sun,
   User,
 } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { usePathname } from 'next/navigation'
+import { Suspense } from 'react'
+import { ThemeToggle } from './navbar-client'
+import { NavLink } from './nav-link'
 
 const NAV_ITEMS = [
-  { href: '/', label: 'Home', icon: Home },
-  { href: '/about', label: 'About', icon: User },
-  { href: '/experience', label: 'Experience', icon: BriefcaseBusiness },
-  { href: '/projects', label: 'Projects', icon: FolderKanban },
-  { href: '/blog', label: 'Blog', icon: BookOpen },
-] as const
-
-interface NavLinkProps {
-  href: string
-  label: string
-  icon: React.ElementType
-}
-
-function NavLink({ href, label, icon: Icon }: NavLinkProps) {
-  const pathname = usePathname()
-
-  // Check if the nav item should be active
-  const isActive =
-    href === '/'
-      ? pathname === href
-      : pathname === href || pathname.startsWith(href + '/')
-
-  return (
-    <li>
-      <Link
-        href={href}
-        className="flex flex-col items-center text-xs font-medium text-muted transition-colors duration-300 hover:text-primary data-[active=true]:border-primary data-[active=true]:font-bold data-[active=true]:text-primary sm:text-sm md:text-base md:data-[active=true]:border-b-2"
-        data-active={isActive}
-      >
-        <Icon className="mb-1 h-5 w-5 md:hidden" /> {label}
-      </Link>
-    </li>
-  )
-}
-
-function ThemeToggle() {
-  const { setTheme, theme } = useTheme()
-
-  return (
-    <button
-      className="absolute right-5 top-5 md:right-1"
-      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      aria-label="Toggle theme"
-    >
-      <div className="relative">
-        <Sun className="h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 md:h-4 md:w-4" />
-        <Moon className="absolute left-0 top-0 h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 md:h-4 md:w-4" />
-      </div>
-    </button>
-  )
-}
+  { href: '/', label: 'Home', iconName: 'Home' as const },
+  { href: '/about', label: 'About', iconName: 'User' as const },
+  {
+    href: '/experience',
+    label: 'Experience',
+    iconName: 'BriefcaseBusiness' as const,
+  },
+  { href: '/projects', label: 'Projects', iconName: 'FolderKanban' as const },
+  { href: '/blog', label: 'Blog', iconName: 'BookOpen' as const },
+]
 
 export function Navbar() {
   return (
@@ -96,7 +52,9 @@ export function Navbar() {
               <NavLink key={item.href} {...item} />
             ))}
           </ul>
-          <ThemeToggle />
+          <Suspense fallback={<div className="h-5 w-5" />}>
+            <ThemeToggle />
+          </Suspense>
         </div>
       </nav>
     </header>
