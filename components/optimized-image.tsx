@@ -1,5 +1,3 @@
-'use client'
-
 import Image, { ImageProps } from 'next/image'
 import { IMAGE_SIZES, BLUR_DATA_URL, type ImageType } from '@/lib/image-utils'
 
