@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Poppins } from 'next/font/google'
 import { preconnect } from 'react-dom'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -48,6 +48,16 @@ export const metadata: Metadata = {
       'application/rss+xml': 'https://www.jun-ukemori.com/feed.xml',
     },
   },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f5f3ff' },
+    { media: '(prefers-color-scheme: dark)', color: '#1e1b4b' },
+  ],
 }
 
 export default function RootLayout({
