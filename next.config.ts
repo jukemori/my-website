@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000, // 1 year cache
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    qualities: [75, 85], // Support both default (75) and custom (85) quality
   },
   // Enable experimental features for better performance
   experimental: {
