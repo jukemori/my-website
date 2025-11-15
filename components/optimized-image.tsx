@@ -2,7 +2,10 @@ import Image, { ImageProps } from 'next/image'
 import { IMAGE_SIZES, BLUR_DATA_URL, type ImageType } from '@/lib/image-utils'
 
 interface OptimizedImageProps
-  extends Omit<ImageProps, 'placeholder' | 'blurDataURL' | 'sizes'> {
+  extends Omit<
+    ImageProps,
+    'placeholder' | 'blurDataURL' | 'sizes' | 'fetchPriority'
+  > {
   imageType?: ImageType
   loading?: 'lazy' | 'eager'
   style?: React.CSSProperties
@@ -25,13 +28,14 @@ export function OptimizedImage({
       alt={alt}
       width={width}
       height={height}
-      className={`${className} transition-opacity duration-700 ease-in-out`}
+      className={className}
       placeholder="blur"
       blurDataURL={BLUR_DATA_URL}
       sizes={IMAGE_SIZES[imageType]}
       priority={priority}
       loading={loading || (priority ? 'eager' : 'lazy')}
       quality={85}
+      fetchPriority={priority ? 'high' : 'auto'}
       {...props}
     />
   )
