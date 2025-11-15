@@ -30,21 +30,20 @@ export function reportWebVitals(metric: PerformanceMetrics) {
 }
 
 /**
- * Preloads critical images for better performance
+ * Preloads critical images using React 19 preload API for better performance
  * @param imageSrc - Image source URL
  * @param priority - Whether to use high priority
  */
-export function preloadImage(imageSrc: string, priority: boolean = true) {
-  if (typeof window !== 'undefined') {
-    const link = document.createElement('link')
-    link.rel = 'preload'
-    link.as = 'image'
-    link.href = imageSrc
-    if (priority) {
-      link.setAttribute('fetchpriority', 'high')
-    }
-    document.head.appendChild(link)
-  }
+export async function preloadImage(
+  imageSrc: string,
+  priority: boolean = true,
+) {
+  // Use React 19's preload API for better integration with React's resource management
+  const { preload } = await import('react-dom')
+  preload(imageSrc, {
+    as: 'image',
+    fetchPriority: priority ? 'high' : 'low',
+  })
 }
 
 /**
