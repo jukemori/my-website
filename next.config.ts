@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
   // Enable experimental features for better performance
   experimental: {
     optimizePackageImports: ['lucide-react', '@mdx-js/react', 'next-themes'],
+    // Enable Turbopack file system caching for faster dev server restarts
+    turbopackFileSystemCacheForDev: true,
   },
   // Turbopack configuration (moved to top-level in Next.js 16)
   turbopack: {
