@@ -21,6 +21,7 @@ export function BlogPostCard({ post, priority = false }: BlogPostCardProps) {
       <Link
         href={`/blog/${post.slug}`}
         className="group block transition-opacity hover:opacity-90"
+        prefetch={false}
       >
         {post.image && (
           <BlogImage src={post.image} alt={post.title} priority={priority} />
