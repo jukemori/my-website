@@ -1,11 +1,4 @@
 import Link from 'next/link'
-import {
-  BookOpen,
-  BriefcaseBusiness,
-  FolderKanban,
-  Home,
-  User,
-} from 'lucide-react'
 import { Suspense } from 'react'
 import { ThemeToggle } from './navbar-client'
 import { NavLink } from './nav-link'
@@ -24,8 +17,8 @@ const NAV_ITEMS = [
 
 export function Navbar() {
   return (
-    <header className="header fixed left-0 top-0 z-100 w-full bg-background shadow-xs md:bg-background/90 md:backdrop-blur-xs">
-      <nav className="container relative mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
+    <header className="header bg-background md:bg-background/90 fixed top-0 left-0 z-100 w-full shadow-xs md:backdrop-blur-xs">
+      <nav className="relative container mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 md:h-14">
         <Link href="/" className="relative h-[30px] w-[30px]">
           <svg
             version="1.0"
@@ -47,7 +40,7 @@ export function Navbar() {
         </Link>
 
         <div className="w-full md:w-auto md:border-0 md:bg-transparent md:p-0 md:pr-10">
-          <ul className="safe-bottom md:background-transparent fixed bottom-0 left-0 z-100 grid w-full grid-cols-5 gap-4 border-t border-border bg-background pb-3 pt-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
+          <ul className="safe-bottom md:background-transparent border-border bg-background fixed bottom-0 left-0 z-100 grid w-full grid-cols-5 gap-4 border-t pt-3 pb-3 md:relative md:flex md:w-auto md:border-none md:bg-transparent md:p-0 md:pt-0">
             {NAV_ITEMS.map((item) => (
               <NavLink key={item.href} {...item} />
             ))}

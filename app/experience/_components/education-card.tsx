@@ -22,13 +22,13 @@ export function EducationCard({
   return (
     <div className="mb-8">
       <h3 className="text-xl font-bold">{school}</h3>
-      <p className="text-sm leading-relaxed text-muted">{period}</p>
-      <p className="mb-2 text-sm leading-relaxed text-muted">{location}</p>
-      <p className="leading-relaxed text-muted">{degree}</p>
-      {activities && <p className="leading-relaxed text-muted">{activities}</p>}
+      <p className="text-muted text-sm leading-relaxed">{period}</p>
+      <p className="text-muted mb-2 text-sm leading-relaxed">{location}</p>
+      <p className="text-muted leading-relaxed">{degree}</p>
+      {activities && <p className="text-muted leading-relaxed">{activities}</p>}
 
       {technologies && (
-        <div className="mt-4 flex flex-wrap gap-2 text-muted">
+        <div className="text-muted mt-4 flex flex-wrap gap-2">
           {technologies.map((tech) => (
             <TechIcon key={tech} name={tech} />
           ))}
@@ -37,7 +37,7 @@ export function EducationCard({
 
       {projectDemo && (
         <div className="mt-4">
-          <p className="mb-2 leading-relaxed text-muted">
+          <p className="text-muted mb-2 leading-relaxed">
             Final Group Project:
           </p>
           <iframe

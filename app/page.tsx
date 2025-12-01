@@ -56,7 +56,7 @@ export default function Home() {
         />
 
         <h1 className="mb-6 text-4xl font-bold md:text-5xl">Jun Ukemori</h1>
-        <h3 className="mb-8 text-base text-muted md:text-lg">
+        <h3 className="text-muted mb-8 text-base md:text-lg">
           Software Engineer in Tokyo
         </h3>
 

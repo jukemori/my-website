@@ -12,7 +12,7 @@ export function TagList({ tags, className, tagClassName }: TagListProps) {
   return (
     <div className={cn('flex flex-wrap gap-2', className)}>
       {tags.map((tag) => (
-        <span key={tag} className={cn('text-sm text-muted', tagClassName)}>
+        <span key={tag} className={cn('text-muted text-sm', tagClassName)}>
           {tag}
         </span>
       ))}

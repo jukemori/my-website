@@ -38,7 +38,7 @@ export function NavLink({ href, label, iconName }: NavLinkProps) {
     <li>
       <Link
         href={href}
-        className="flex flex-col items-center text-xs font-medium text-muted transition-colors duration-300 hover:text-primary data-[active=true]:border-primary data-[active=true]:font-bold data-[active=true]:text-primary sm:text-sm md:text-base md:data-[active=true]:border-b-2"
+        className="text-muted hover:text-primary data-[active=true]:border-primary data-[active=true]:text-primary flex flex-col items-center text-xs font-medium transition-colors duration-300 data-[active=true]:font-bold sm:text-sm md:text-base md:data-[active=true]:border-b-2"
         data-active={isActive}
       >
         <Icon className="mb-1 h-5 w-5 md:hidden" /> {label}

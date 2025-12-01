@@ -15,10 +15,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => (
     <div className="flex flex-col space-y-6">
       <div>
         <h3 className="mb-4 text-2xl font-bold">{project.title}</h3>
-        <p className="leading-relaxed text-muted">{project.description}</p>
+        <p className="text-muted leading-relaxed">{project.description}</p>
       </div>
 
-      <div className="flex flex-wrap gap-3 text-muted">
+      <div className="text-muted flex flex-wrap gap-3">
         {project.techStack.map((tech, index) => (
           <TechIcon key={index} name={tech} />
         ))}

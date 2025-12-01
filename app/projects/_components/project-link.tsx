@@ -19,7 +19,7 @@ export const ProjectLink: React.FC<ProjectLinkProps> = ({
     <Link
       href={href}
       target="_blank"
-      className="flex items-center gap-1 text-muted transition-colors duration-300 hover:text-primary"
+      className="text-muted hover:text-primary flex items-center gap-1 transition-colors duration-300"
       prefetch={false}
     >
       <IconComponent className="h-3.5 w-3.5" />

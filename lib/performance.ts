@@ -34,10 +34,7 @@ export function reportWebVitals(metric: PerformanceMetrics) {
  * @param imageSrc - Image source URL
  * @param priority - Whether to use high priority
  */
-export async function preloadImage(
-  imageSrc: string,
-  priority: boolean = true,
-) {
+export async function preloadImage(imageSrc: string, priority: boolean = true) {
   // Use React 19's preload API for better integration with React's resource management
   const { preload } = await import('react-dom')
   preload(imageSrc, {

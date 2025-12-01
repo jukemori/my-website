@@ -4,15 +4,15 @@ import { PortraitImage } from './mdx-portrait-image'
 
 // Custom components for MDX elements
 function MdxHeading2({ children }: { children: ReactNode }) {
-  return <h2 className="mb-4 mt-8 text-2xl font-bold">{children}</h2>
+  return <h2 className="mt-8 mb-4 text-2xl font-bold">{children}</h2>
 }
 
 function MdxHeading3({ children }: { children: ReactNode }) {
-  return <h3 className="mb-3 mt-6 text-xl font-semibold">{children}</h3>
+  return <h3 className="mt-6 mb-3 text-xl font-semibold">{children}</h3>
 }
 
 function MdxParagraph({ children }: { children: ReactNode }) {
-  return <p className="mb-4 leading-relaxed text-muted">{children}</p>
+  return <p className="text-muted mb-4 leading-relaxed">{children}</p>
 }
 
 function MdxLink({ href, children }: { href: string; children: ReactNode }) {
@@ -21,7 +21,7 @@ function MdxLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <a
       href={href}
-      className="text-foreground underline underline-offset-4 hover:text-primary"
+      className="text-foreground hover:text-primary underline underline-offset-4"
       target={isExternal ? '_blank' : undefined}
       rel={isExternal ? 'noopener noreferrer' : undefined}
     >
@@ -32,7 +32,7 @@ function MdxLink({ href, children }: { href: string; children: ReactNode }) {
 
 function MdxList({ children }: { children: ReactNode }) {
   return (
-    <ul className="mb-4 ml-6 list-disc space-y-2 text-muted">{children}</ul>
+    <ul className="text-muted mb-4 ml-6 list-disc space-y-2">{children}</ul>
   )
 }
 
@@ -42,7 +42,7 @@ function MdxListItem({ children }: { children: ReactNode }) {
 
 function MdxBlockquote({ children }: { children: ReactNode }) {
   return (
-    <blockquote className="my-6 border-l-4 border-border bg-muted/30 py-4 pl-6">
+    <blockquote className="border-border bg-muted/30 my-6 border-l-4 py-4 pl-6">
       {children}
     </blockquote>
   )

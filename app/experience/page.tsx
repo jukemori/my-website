@@ -48,7 +48,7 @@ export default function ExperiencePage() {
       <section className="grid gap-8 md:grid-cols-2">
         <div>
           <PageHeader>Top Skills</PageHeader>
-          <ul className="ml-6 list-disc text-muted">
+          <ul className="text-muted ml-6 list-disc">
             {skills.topSkills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
@@ -57,7 +57,7 @@ export default function ExperiencePage() {
 
         <div>
           <PageHeader>Languages</PageHeader>
-          <ul className="ml-6 list-disc text-muted">
+          <ul className="text-muted ml-6 list-disc">
             {skills.languages.map(({ language, level }) => (
               <li key={language}>
                 {language} ({level})

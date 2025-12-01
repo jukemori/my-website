@@ -136,7 +136,7 @@ export default async function BlogPost({ params }: Props) {
       />
       <TagList tags={post.tags} className="mb-4" tagClassName="text-lg" />
       <h1 className="mb-4 text-3xl font-bold md:text-4xl">{post.title}</h1>
-      <time className="mb-10 block text-sm text-muted">
+      <time className="text-muted mb-10 block text-sm">
         {formatDate(post.date)} &nbsp;·&nbsp; {post.readingTime}
       </time>
       <div className="mb-8 w-full">
@@ -150,7 +150,7 @@ export default async function BlogPost({ params }: Props) {
           imageType="hero"
         />
       </div>
-      <div className="prose max-w-none dark:prose-invert prose-p:text-muted">
+      <div className="prose dark:prose-invert prose-p:text-muted max-w-none">
         <MDXRemote
           source={post.content}
           components={mdxComponents}
@@ -158,7 +158,7 @@ export default async function BlogPost({ params }: Props) {
         />
       </div>
 
-      <div className="mt-16 border-t border-border pt-6">
+      <div className="border-border mt-16 border-t pt-6">
         <p className="text-muted">
           Subscribe to my blog posts via{' '}
           <a
