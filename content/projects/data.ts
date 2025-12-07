@@ -24,7 +24,7 @@ const projectData = [
     ],
     links: [
       {
-        href: 'https://prep-genie-eight.vercel.app',
+        href: 'https://prep-genie-project.vercel.app/',
         label: 'Demo',
         icon: IconType.ExternalLink,
       },
