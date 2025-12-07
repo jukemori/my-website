@@ -22,6 +22,10 @@ export function OptimizedImage({
   loading,
   ...props
 }: OptimizedImageProps) {
+  // Static imports (StaticImageData) have auto-generated blurDataURL
+  // Only use custom blur for string URLs
+  const isStaticImport = typeof src === 'object'
+
   return (
     <Image
       src={src}
@@ -30,7 +34,7 @@ export function OptimizedImage({
       height={height}
       className={className}
       placeholder="blur"
-      blurDataURL={BLUR_DATA_URL}
+      {...(!isStaticImport && { blurDataURL: BLUR_DATA_URL })}
       sizes={IMAGE_SIZES[imageType]}
       priority={priority}
       loading={loading || (priority ? 'eager' : 'lazy')}
