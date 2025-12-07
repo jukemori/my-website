@@ -1,8 +1,40 @@
 import { Project, IconType } from '@/app/projects/_lib/types'
+import prepGenieImage from '@/public/images/projects/prep-genie/main.webp'
 import mingleTimeImage from '@/public/images/projects/mingletime/main.webp'
 import goalPilotImage from '@/public/images/projects/goal-pilot/main.webp'
 
 const projectData = [
+  {
+    title: 'PrepGenie',
+    description:
+      'PrepGenie is a smart meal prep and nutrition planner that helps users generate personalized meal plans from a curated recipe database, track macronutrients, and create automated grocery lists.',
+    image: {
+      src: prepGenieImage,
+      alt: 'PrepGenie dashboard showing meal plan and nutrition tracking',
+    },
+    techStack: [
+      'nextjs',
+      'react',
+      'typescript',
+      'tailwindcss',
+      'supabase',
+      'postgresql',
+      'vitest',
+      'playwright',
+    ],
+    links: [
+      {
+        href: 'https://prep-genie-eight.vercel.app',
+        label: 'Demo',
+        icon: IconType.ExternalLink,
+      },
+      {
+        href: 'https://github.com/jukemori/prep-genie',
+        label: 'GitHub',
+        icon: IconType.GithubIcon,
+      },
+    ],
+  },
   {
     title: 'Goal Pilot',
     description:
@@ -58,11 +90,6 @@ const projectData = [
       'docker',
     ],
     links: [
-      {
-        href: 'https://mingletime.vercel.app/',
-        label: 'Demo',
-        icon: IconType.ExternalLink,
-      },
       {
         href: '/blog/i-created-a-calendar-app',
         label: 'Blog',
